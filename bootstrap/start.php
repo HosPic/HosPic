@@ -29,7 +29,7 @@ $env = $app->detectEnvironment(array(
 	'damon' => array('normandy-SR3'),
 	'mark' => array('Laptopper-PC'),
 	'staging' => array('nmc-uo'),
-
+	// 'production' => array('nmc-uo'),
 ));
 
 /*

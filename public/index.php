@@ -1,4 +1,6 @@
 <?php
+/*JAG är committing från source tree swenglish swag*/
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

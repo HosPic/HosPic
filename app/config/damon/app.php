@@ -2,5 +2,5 @@
 
 return array(
 	'debug' => true,
-	'url' => 'http://localhost/hospic',
+	'url' => 'http://localhost/Projects/HosPic/public',
 );

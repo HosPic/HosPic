@@ -143,7 +143,21 @@ class BuildDatabase extends Migration {
 	 */
 	public function down()
 	{
-		/*Schema::dropIfExists('users');*/
+		Schema::dropIfExists('service_category');
+		Schema::dropIfExists('service');
+		Schema::dropIfExists('user_info');
+		Schema::dropIfExists('budget');
+		Schema::dropIfExists('user_department');
+		Schema::dropIfExists('department');
+		Schema::dropIfExists('article_category');
+		Schema::dropIfExists('article');
+		Schema::dropIfExists('discarded');
+		Schema::dropIfExists('article_data');
+		Schema::dropIfExists('article_question');
+		Schema::dropIfExists('question_answer');
+		Schema::dropIfExists('order');
+		Schema::dropIfExists('order_article');
+		Schema::dropIfExists('order_answer');
 	}
 
 }

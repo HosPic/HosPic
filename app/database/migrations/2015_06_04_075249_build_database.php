@@ -27,8 +27,9 @@ class BuildDatabase extends Migration {
 		});
 
 		Schema::create('user_department', function($t){
-			$t->integer('user_id')->primary();
-			$t->integer('department_code')->primary();
+			$t->integer('user_id');
+			$t->integer('department_code');
+			$t->primary(array('user_id','department_code'));
 		});
 
 		Schema::create('department', function($t){
@@ -70,18 +71,20 @@ class BuildDatabase extends Migration {
 		});
 
 		Schema::create('order_article', function($t){
-			$t->integer('order_id')->primary();
-			$t->integer('article_code')->primary();
-			$t->integer('price_code')->primary();
+			$t->integer('order_id');
+			$t->integer('article_code');
+			$t->integer('price_code');
 			$t->integer('quantity');
 			$t->integer('total_delivered');
+			$t->primary(array('order_id','article_code','price_code'));
 		});
 
 		Schema::create('order_answer', function($t){
-			$t->integer('order_id')->primary();
-			$t->integer('article_code')->primary();
-			$t->integer('question_id')->primary();
+			$t->integer('order_id');
+			$t->integer('article_code');
+			$t->integer('question_id');
 			$t->string('answer',300);
+			$t->primary(array('order_id','article_code','question_id'));
 		});
 		/*End order data*/
 
@@ -92,7 +95,7 @@ class BuildDatabase extends Migration {
 			$t->string('name',60);
 			$t->string('unit',10);
 			$t->integer('minimal_supply');
-			$t->date('date_of_creation');
+			$t->dateTime('date_of_creation');
 			$t->boolean('special');
 			$t->boolean('hidden');
 			$t->string('description',130);
@@ -104,7 +107,7 @@ class BuildDatabase extends Migration {
 		});
 
 		Schema::create('article_data', function($t){
-			$t->integer('article_code')->primary();
+			$t->integer('article_code');
 			$t->increments('price_code');
 			$t->integer('supply');
 			$t->decimal('price',6,2);
@@ -112,11 +115,12 @@ class BuildDatabase extends Migration {
 		});
 
 		Schema::create('discarded', function($t){
-			$t->integer('article_code')->primary();
-			$t->integer('price_code')->primary();
+			$t->integer('article_code');
+			$t->integer('price_code');
 			$t->dateTime('date');
 			$t->string('reason',80);
 			$t->integer('quantity');
+			$t->primary(array('article_code','price_code'));
 		});
 
 		Schema::create('article_question', function($t){

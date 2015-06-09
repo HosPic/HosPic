@@ -1,17 +1,16 @@
-<nav class="top-bar primary_color" data-topbar role="navigation">
-	<ul class="title-area secondary_color">
-		<li class="name">
-			<h1><a href="{{ URL::to('/'); }}">HosPic</a></h1>
-		</li>
-		<li class="toggle-topbar menu-icon">
-			<a href=""><span>Menu</span></a>
-		</li>
-	</ul>
-	<section class="top-bar-section">
-		<ul class="right">
-			<li><a href="{{ URL::route('getLogout'); }}">Uitloggen</a></li>
-		</ul>
-		<ul class="left">
+<nav class="navbar navbar-default primary_color" role="navigation">
+	<div class="navbar-header secondary_color">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="{{ URL::to('/'); }}">HosPic</a>
+	</div>
+
+	<div class="collapse navbar-collapse" id="topbar">
+		<ul class="nav navbar-nav">
 			<li class="active"><a href="{{ URL::route('getOrder'); }}">Artikelen bestellen</a></li>
 			<li><a href="{{ URL::route('getOrder'); }}">Speciale bestelling</a></li>
 			<li><a href="{{ URL::route('getService'); }}">Dienst aanvragen</a></li>
@@ -25,5 +24,8 @@
 				<li><a href="{{ URL::route('getStatistics'); }}">Statistieken</a></li>
 			{{-- @endif --}}
 		</ul>
-	</section>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="{{ URL::route('getLogout'); }}">Uitloggen</a></li>
+		</ul>
+	</div>
 </nav>

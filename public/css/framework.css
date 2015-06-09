@@ -2,58 +2,69 @@
 
 body {
 	background-color: #eeeeee;
+	color: #000000;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #cbcbcb;
+	margin: 0 2px;
+}
+
+.navbar-default .navbar-brand {
+	color: #cbcbcb;
+	margin: 2px;
+}
+.navbar-default .navbar-brand:focus, 
+.navbar-default .navbar-brand:hover {
+	color: #ffffff;
+	margin: 2px;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:focus, 
+.navbar-default .navbar-nav > li > a:hover {
+	color: #ffffff;
+	background-color: transparent;
+	border-bottom: 3px #d38104 solid;
+	margin: 0 2px;
 }
 
 .primary_color {
 	background-color: #a5372d;
 }
 
-.secondary_color,
-.top-bar.expanded .title-area {
+.secondary_color {
 	background-color: #d38104;
 }
 
 .button_secondary_color {
+	color: #ffffff;
 	background-color: #d38104;
 	border-color: #c17706;
 }
 
 .button_secondary_color:hover {
+	color: #ffffff;
 	background-color: #c17706;
 }
 
-.top-bar-section ul li,
-.top-bar-section li.active:not(.has-form) a:not(.button),
-.top-bar-section li:not(.has-form) a:not(.button),
-.top-bar-section ul li.active > a,
-.top-bar-section li.active:not(.has-form) a:hover:not(.button),
-.top-bar-section li:not(.has-form) a:hover:not(.button),
-.top-bar-section ul li:hover:not(.has-form) > a {
-	background: #a5372d;
-	margin: 0 2px;
-	color: #cbcbcb;
+.navbar-right {
+	border-left: 2px #802017 solid;
 }
 
-.top-bar-section li.active:not(.has-form) a:not(.button),
-.top-bar-section ul li.active > a,
-.top-bar-section li.active:not(.has-form) a:hover:not(.button),
-.top-bar-section li:not(.has-form) a:hover:not(.button),
-.top-bar-section ul li:hover:not(.has-form) > a {
-	border-bottom: 3px #d38104 solid;
-	color: #ffffff;
+.navbar {
+	margin-bottom: 0;
+	height: 58px;
 }
 
-.top-bar,
-.top-bar .title-area {
-	height: 50px;
+.navbar-nav {
+	margin: 2px 0px;
 }
 
-.top-bar.expanded .toggle-topbar a {
-	color: #ffffff;
-}
-
-.top-bar.expanded .toggle-topbar a span::after {
-	box-shadow: 0px 0px 0px 1px #ffffff, 0px 7px 0px 1px #ffffff, 0px 14px 0px 1px #ffffff;
+.navbar-header {
+	height: 56px;
 }
 
 .search_bar {
@@ -66,9 +77,3 @@ body {
 }
 
 /* Media Queries below this line*/
-
-@media only screen and (min-width: 40em) {
-	ul.right {
-		border-left: 2px #802017 solid;
-	}
-}

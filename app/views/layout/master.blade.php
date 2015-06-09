@@ -9,11 +9,8 @@
 			@yield('searchbar')
 		</div>
 		@yield('content')
-		{{ HTML::script("js/vendor/jquery.js") }}
-		{{ HTML::script("js/foundation.min.js") }}
+		{{ HTML::script("https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js") }}
+		{{ HTML::script("js/boostrap.min.js") }}
 		@yield('script')
-		<script>
-			$(document).foundation();
-		</script>
 	</body>
 </html>

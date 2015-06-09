@@ -1,16 +1,16 @@
 body {
-	background-color: rgb(238, 238, 238);
+	background-color: #eeeeee;
 }
 .primary_color {
-	background-color: rgb(165, 55, 45);
+	background-color: #a5372d;
 }
 
 .secondary_color {
-	background-color: rgb(211, 129, 4);
+	background-color: #d38104;
 }
 
 ul.right {
-	border-left: 1px rgb(128, 32, 23) solid;
+	border-left: 1px #802017 solid;
 }
 
 .top-bar-section ul li,
@@ -22,7 +22,7 @@ ul.right {
 .top-bar-section ul li:hover:not(.has-form) > a {
 	background: none;
 	margin: 0 2px;
-	color: rgb(203, 203, 203);
+	color: #cbcbcb;
 }
 
 .top-bar-section li.active:not(.has-form) a:not(.button),
@@ -30,7 +30,7 @@ ul.right {
 .top-bar-section li.active:not(.has-form) a:hover:not(.button),
 .top-bar-section li:not(.has-form) a:hover:not(.button),
 .top-bar-section ul li:hover:not(.has-form) > a {
-	border-bottom: 2px rgb(211, 129, 4) solid;
+	border-bottom: 2px #d38104 solid;
 	color: #ffffff;
 }
 

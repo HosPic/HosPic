@@ -5,11 +5,15 @@
 	</head>
 	<body>
 		@include('partials.menu')
-		{{-- @include('partials.search') --}}
-		<div></div>
+		<div class="search_bar">
+			@yield('searchbar')
+		</div>
+		@yield('content')
 		{{ HTML::script("js/vendor/jquery.js") }}
 		{{ HTML::script("js/foundation.min.js") }}
-		{{ HTML::script("js/foundation/foundation.topbar.js") }}
 		@yield('script')
+		<script>
+			$(document).foundation();
+		</script>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
-class Category extends Eloquent {
+class ArticleCategory extends Eloquent {
 
-	protected $table = 'category';
+	protected $table = 'article_category';
 
 }

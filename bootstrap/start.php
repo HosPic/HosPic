@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(array(
-	'frank' => array('Axiom'),
+	'frank' => array('Axiom.local'),
 	'damon' => array('normandy-SR3'),
 	'mark' => array('Laptopper-PC', 'Mighty-1'),
 	'staging' => array('NMC-UO'),

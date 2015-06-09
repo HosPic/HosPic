@@ -19,5 +19,5 @@ Route::get('/', function()
 
 Route::get('/dingen', function()
 {
-	return View::make('hello');
+	return View::make('layout/master');
 });

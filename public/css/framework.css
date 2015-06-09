@@ -1,0 +1,40 @@
+body {
+	background-color: #eeeeee;
+}
+.primary_color {
+	background-color: #a5372d;
+}
+
+.secondary_color {
+	background-color: #d38104;
+}
+
+ul.right {
+	border-left: 1px #802017 solid;
+}
+
+.top-bar-section ul li,
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section ul li.active > a,
+.top-bar-section li.active:not(.has-form) a:hover:not(.button),
+.top-bar-section li:not(.has-form) a:hover:not(.button),
+.top-bar-section ul li:hover:not(.has-form) > a {
+	background: none;
+	margin: 0 2px;
+	color: #cbcbcb;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.top-bar-section ul li.active > a,
+.top-bar-section li.active:not(.has-form) a:hover:not(.button),
+.top-bar-section li:not(.has-form) a:hover:not(.button),
+.top-bar-section ul li:hover:not(.has-form) > a {
+	border-bottom: 2px #d38104 solid;
+	color: #ffffff;
+}
+
+.top-bar,
+.top-bar .title-area {
+	height: 47px;
+}

@@ -34,7 +34,8 @@ class Vers3 extends Migration {
 		Schema::create('request', function($t)
 		{
 			$t->increments('id');
-			$t->integer('user_id');$t->integer('department_manager');
+			$t->integer('user_id');
+			$t->integer('department_manager');
 			$t->dateTime('date');
 			$t->string('reason',500);
 			$t->integer('status');
@@ -172,6 +173,21 @@ class Vers3 extends Migration {
 	public function down()
 	{
 		//
+		Schema::dropIfExists('category');
+		Schema::dropIfExists('service');
+		Schema::dropIfExists('user');
+		Schema::dropIfExists('budget');
+		Schema::dropIfExists('user_department');
+		Schema::dropIfExists('department');
+		Schema::dropIfExists('article');
+		Schema::dropIfExists('discarded');
+		Schema::dropIfExists('price');
+		Schema::dropIfExists('question');
+		Schema::dropIfExists('answer');
+		Schema::dropIfExists('order');
+		Schema::dropIfExists('order_article');
+		Schema::dropIfExists('order_answer');
+		Schema::dropIfExists('request');
 	}
 
 }

@@ -5,3 +5,8 @@
 
 {{ HTML::style("css/normalize.css") }}
 {{ HTML::style("css/foundation.css") }}
+
+{{-- Custom global stylesheet --}}
+{{ HTML::style("css/framework.css") }}
+
+@yield('style')

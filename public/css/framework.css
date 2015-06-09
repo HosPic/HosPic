@@ -1,0 +1,40 @@
+body {
+	background-color: rgb(238, 238, 238);
+}
+.primary_color {
+	background-color: rgb(165, 55, 45);
+}
+
+.secondary_color {
+	background-color: rgb(211, 129, 4);
+}
+
+ul.right {
+	border-left: 1px rgb(128, 32, 23) solid;
+}
+
+.top-bar-section ul li,
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section ul li.active > a,
+.top-bar-section li.active:not(.has-form) a:hover:not(.button),
+.top-bar-section li:not(.has-form) a:hover:not(.button),
+.top-bar-section ul li:hover:not(.has-form) > a {
+	background: none;
+	margin: 0 2px;
+	color: rgb(203, 203, 203);
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.top-bar-section ul li.active > a,
+.top-bar-section li.active:not(.has-form) a:hover:not(.button),
+.top-bar-section li:not(.has-form) a:hover:not(.button),
+.top-bar-section ul li:hover:not(.has-form) > a {
+	border-bottom: 2px rgb(211, 129, 4) solid;
+	color: #ffffff;
+}
+
+.top-bar,
+.top-bar .title-area {
+	height: 47px;
+}

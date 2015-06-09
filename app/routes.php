@@ -4,13 +4,13 @@ Route::get('/', function(){
 	return View::make('hello');
 });
 
-Route::group(array('before'=>'guest'),function(){
+Route::group(array('before'=>'guest'), function(){
 	Route::get('/login', array('as'=>'getLogin','uses'=>'UserController@getLogin'));
 	Route::post('/login','UserController@postLogin');
 });
 
-Route::group(array('before'=>'auth'),function(){
-	Route::group(array('prefix'=>'artikelen'),function(){	
+Route::group(array('before'=>'auth'), function(){
+	Route::group(array('prefix'=>'artikelen'), function(){	
 		Route::get('/', array('as'=>'getArticles','uses'=>'ArticleController@index'));
 		Route::get('/{id}', array('as'=>'getArticle','uses'=>'ArticleController@show'));
 		Route::get('/{id}/edit', array('as'=>'editArticle','uses'=>'ArticleController@edit'));
@@ -19,7 +19,7 @@ Route::group(array('before'=>'auth'),function(){
 		Route::put('/{id}','ArticleController@update');
 		Route::delete('/{id}','ArticleController@delete');
 	});
-	Route::group(array('prefix'=>'diensten'),function(){
+	Route::group(array('prefix'=>'diensten'), function(){
 		Route::get('/{id}', array('as'=>'getService','uses'=>'ServiceController@show'));
 		Route::put('/{id}','ServiceController@update');
 	});

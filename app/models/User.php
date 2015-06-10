@@ -13,12 +13,28 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	protected $hidden = array('password', 'remember_token');
 
+	public function canView($page){
+		$pages = array(	'voorraad beheer'=>array('Administratie'),
+						'bezorglijst'=>array('ict','magazijn','facilitaire diensten'),
+						'statistieken'=>array('Directie')
+						);
+		if(!array_key_exists($page,$pages)){
+			return false;
+		}
+		foreach ($this->departments as $deparment) {
+			if( in_array($deparment->name, $pages[$page])){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// Relations
 	public function type(){
 		return $this->hasOne('Type');
 	}
 
-	public function department(){
+	public function departments(){
 		return $this->belongsToMany('Department', 'user_department');
 	}
 }

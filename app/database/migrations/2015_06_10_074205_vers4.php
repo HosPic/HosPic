@@ -15,7 +15,7 @@ class Vers4 extends Migration {
 		Schema::dropIfExists('discarded');
 
 		Schema::create('discarded', function($t){
-			$t->increments('id')
+			$t->increments('id');
 			$t->integer('article_id');
 			$t->integer('price_id');
 			$t->dateTime('date');

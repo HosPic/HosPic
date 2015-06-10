@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 class DatabaseSeeder extends Seeder {
 
@@ -10,6 +10,12 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Eloquent::unguard();
+
+		$this->call('UserSeeder');
+
+		$this->command->info('frank houd van koekjes...');
+		$this->command->info('mark eet soep met een vork');
+		$this->command->info('DB seeden is gelukt');
 
 		// $this->call('UserTableSeeder');
 	}

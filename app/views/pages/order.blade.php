@@ -38,6 +38,8 @@
 			<div class="col-md-2 shopping_cart">
 				Hoi
 			</div>
+		</div>
+	</div>
 @stop
 
 @section('script')

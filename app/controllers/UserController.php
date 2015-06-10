@@ -2,8 +2,7 @@
 
 class UserController extends BaseController {
 
-	public function getLogin()
-	{
+	public function getLogin() {
 		return View::make('pages.login');
 	}
 
@@ -27,7 +26,7 @@ class UserController extends BaseController {
 		}
 	}
 
-	public function getLogout(){
+	public function getLogout() {
 		Auth::logout();
 		return Redirect::route('getLogin');
 	}

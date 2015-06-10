@@ -79,3 +79,16 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Active State Macro
+|--------------------------------------------------------------------------
+| 
+| This macro return active if given url is active
+| 
+*/
+
+HTML::macro('activeState', function($url) {
+	return Request::is($url) ? 'active' : '';
+});

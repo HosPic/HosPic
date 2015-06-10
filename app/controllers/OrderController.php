@@ -2,18 +2,19 @@
 
 class OrderController extends BaseController {
 
-	public function index()
-	{
+	public function index() {
 		return View::make('pages.order');
 	}
 		
-	public function show()
-	{
+	public function show() {
 		
 	}
 
-	public function special()
-	{
+	public function special() {
+		
+	}
+
+	public function getCategorie($categorie) {
 		
 	}
 }

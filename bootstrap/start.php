@@ -28,8 +28,8 @@ $env = $app->detectEnvironment(array(
 	'frank' => array('Axiom.local'),
 	'damon' => array('normandy-SR3'),
 	'mark' => array('Laptopper-PC', 'Mighty-1'),
-	'staging' => array('NMC-UO'),
-	'production' => array('NMC-OS'),
+	'staging' => array('NMC-OS'),
+	'production' => array('NMC-UO'),
 ));
 
 /*

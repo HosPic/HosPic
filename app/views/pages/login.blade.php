@@ -1,28 +1,41 @@
 <!doctype html>
 <html>
 	<head>
-		<title>HosPic | Login</title>
+		{{-- @include('partials.head') --}}
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		{{ HTML::style("css/login.css") }}
 	</head>
 <body>
 
-{{ Form::open(array('url' => 'login')) }}
-<h1>Login</h1>
-<p>
-    {{ Form::label('email', 'Email') }}
-    {{ Form::text('email', Input::old('email'), array('placeholder' => 'email adress')) }}
-    {{ $errors->first('email') }}
-</p>
-<p>
-    {{ Form::label('password', 'Wachtwoord') }}
-    {{ Form::password('password') }}
-    {{ $errors->first('password') }}
-</p>
-
+{{ Form::open(array('url' => 'login','id'=>"loginForm")) }}
+<h1>Inloggen</h1>
+<div class="form-group">
+	{{ Form::label('email', 'Email') }}
+	{{ Form::text('email', Input::old('email'), array('placeholder' => 'jdoe@nmc.nl','class'=>'form-control')) }}
+	@if($errors->has('email'))
+		<div class="alert alert-warning">
+		    {{ $errors->first('email') }}
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		</div>
+	@endif
+</div>
+<div class="form-group">
+	{{ Form::label('password', 'Wachtwoord') }}
+	{{ Form::password('password',array('class'=>'form-control')) }}
+	@if($errors->has('password'))
+		<div class="alert alert-warning">
+		    {{ $errors->first('password') }}
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		</div>
+	@endif
+</div>
 @if(Session::has('message'))
-<p>{{Session::get('message')}}</p>
+<div class="alert alert-danger">
+	    {{ Session::get('message') }}
+  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</div>
 @endif
-
-<p>{{ Form::submit('Inloggen') }}</p>
+{{ Form::submit('Inloggen') }}
 {{ Form::close() }}
 </body>
 </html>

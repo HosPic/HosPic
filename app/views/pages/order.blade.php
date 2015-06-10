@@ -4,6 +4,10 @@
 	{{ HTML::style("css/order.css")}}
 @stop
 
+@section('title')
+	- Bestellen
+@stop
+
 @section('searchbar')
 	<form class="form-inline">
 		<div class="col-md-4">

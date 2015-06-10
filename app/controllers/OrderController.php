@@ -4,10 +4,15 @@ class OrderController extends BaseController {
 
 	public function index()
 	{
-		// return View::make('pages.')
+		return View::make('pages.order');
 	}
 		
-	public function create()
+	public function show()
+	{
+		
+	}
+
+	public function special()
 	{
 		
 	}

@@ -26,4 +26,9 @@ class ArticleController extends BaseController {
 	{
 		
 	}
+
+	public function update($id)
+	{
+		
+	}
 }

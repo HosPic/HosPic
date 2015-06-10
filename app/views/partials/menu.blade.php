@@ -12,9 +12,9 @@
 	<div class="collapse navbar-collapse" id="topbar">
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="{{ URL::route('getOrder'); }}">Artikelen bestellen</a></li>
-			<li><a href="{{ URL::route('getOrder'); }}">Speciale bestelling</a></li>
+			<li><a href="{{ URL::route('getSpecialOrder'); }}">Speciale bestelling</a></li>
 			<li><a href="{{ URL::route('getService'); }}">Dienst aanvragen</a></li>
-			<li><a href="{{ URL::route('getDeliver'); }}">Mijn aanvragen</a></li>
+			<li><a href="{{ URL::route('getMyServices'); }}">Mijn aanvragen</a></li>
 			<li><a href="{{ URL::route('getMyOrders'); }}">Mijn bestellingen</a></li>
 			@if (Auth::user()->canView("voorraad beheer"))
 				<li><a href="{{ URL::route('getArticles'); }}">Voorraad beheer</a></li>

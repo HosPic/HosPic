@@ -2,14 +2,10 @@
 
 Route::get('/', function(){
 	if (Auth::check()){
-		return View::make('hello');
+		return Redirect::route('getOrder');
 	}else{
 		return Redirect::route('getLogin');
 	}
-});
-
-Route::get('/testview', function(){
-	return View::make('pages/order');
 });
 
 Route::group(array('before'=>'guest'), function(){
@@ -27,12 +23,11 @@ Route::group(array('before'=>'auth'), function(){
 		Route::put('/{id}','ArticleController@update');
 		Route::delete('/{id}','ArticleController@delete');
 	});
-	Route::group(array('prefix'=>'diensten'), function(){
-		Route::get('/{id}', array('as'=>'getService','uses'=>'ServiceController@show'));
-		Route::put('/{id}','ServiceController@update');
-	});
+	Route::get('/diensten', array('as'=>'getService','uses'=>'ServiceController@index'));
+	Route::get('/special', array('as'=>'getSpecialOrder','uses'=>'OrderController@special'));
 	Route::get('/leveringen', array('as'=>'getDeliver','uses'=>'DeliverController@index'));
-	Route::get('/bestellingen', array('as'=>'getMyOrders','uses'=>'OrderController@index'));
+	Route::get('/aanvragen', array('as'=>'getMyServices','uses'=>'ServiceController@show'));
+	Route::get('/bestellingen', array('as'=>'getMyOrders','uses'=>'OrderController@show'));
 	Route::get('/bestellen', array('as'=>'getOrder','uses'=>'OrderController@index'));
 	Route::get('/statistieken', array('as'=>'getStatistics','uses'=>'StatisticsController@index'));
 	Route::get('/logout', array('as'=>'getLogout','uses'=>'UserController@getLogout'));

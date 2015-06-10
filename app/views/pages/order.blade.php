@@ -40,7 +40,7 @@
 			<div class="col-md-8">
 				Placeholder
 			</div>
-			<div class="col-md-2 shopping_cart">
+			<div id="shopping_cart" class="col-md-2">
 				Hoi
 			</div>
 		</div>

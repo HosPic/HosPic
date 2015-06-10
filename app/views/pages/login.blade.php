@@ -1,3 +1,7 @@
+@section('title')
+	- Inloggen
+@stop
+
 <!doctype html>
 <html>
 	<head>

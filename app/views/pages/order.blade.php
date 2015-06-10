@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title')
+	- Bestellen
+@stop
+
 @section('style')
 	{{ HTML::style("css/order.css")}}
 @stop

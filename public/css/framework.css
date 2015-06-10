@@ -65,6 +65,8 @@ body {
 
 .navbar-header {
 	height: 56px;
+	position: relative;
+	z-index: 15;
 }
 
 .search_bar {
@@ -74,6 +76,12 @@ body {
 	padding: 5px 0;
 	border-bottom: 1px #c5c5c5 solid;
 	box-shadow: #dadada 0 2px 2px 0;  
+}
+
+.navbar-collapse {
+	position: relative;
+	z-index: 10;
+	background-color: #a5372d;
 }
 
 /* Media Queries below this line*/

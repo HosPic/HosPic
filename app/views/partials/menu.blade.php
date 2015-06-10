@@ -16,11 +16,11 @@
 			<li><a href="{{ URL::route('getService'); }}">Dienst aanvragen</a></li>
 			<li><a href="{{ URL::route('getDeliver'); }}">Mijn aanvragen</a></li>
 			<li><a href="{{ URL::route('getMyOrders'); }}">Mijn bestellingen</a></li>
-			{{-- @if (User::canView("voorraad beheer")) --}}
+			{{-- @if (auth::User->canView("voorraad beheer")) --}}
 				<li><a href="{{ URL::route('getArticles'); }}">Voorraad beheer</a></li>
-			{{-- @elseif (User::canView("bezorglijst")) --}}
+			{{-- @elseif (auth::User->canView("bezorglijst")) --}}
 				<li><a href="{{ URL::route('getDeliver'); }}">Bezorglijst</a></li>
-			{{-- @elseif (User::canView("statistieken")) --}}
+			{{-- @elseif (auth::User->canView("statistieken")) --}}
 				<li><a href="{{ URL::route('getStatistics'); }}">Statistieken</a></li>
 			{{-- @endif --}}
 		</ul>

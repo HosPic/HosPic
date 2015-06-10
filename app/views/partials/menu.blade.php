@@ -11,7 +11,7 @@
 
 	<div class="collapse navbar-collapse" id="topbar">
 		<ul class="nav navbar-nav">
-			<li class="{{ HTML::activeState('bestellen') }}"><a href="{{ URL::route('getOrder'); }}">Artikelen bestellen</a></li>
+			<li class="{{ HTML::activeState('bestellen*') }}"><a href="{{ URL::route('getOrder'); }}">Artikelen bestellen</a></li>
 			<li class="{{ HTML::activeState('special') }}"><a href="{{ URL::route('getSpecialOrder'); }}">Speciale bestelling</a></li>
 			<li class="{{ HTML::activeState('diensten') }}"><a href="{{ URL::route('getService'); }}">Dienst aanvragen</a></li>
 			<li class="{{ HTML::activeState('aanvragen') }}"><a href="{{ URL::route('getMyServices'); }}">Mijn aanvragen</a></li>

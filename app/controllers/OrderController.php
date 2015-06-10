@@ -15,6 +15,6 @@ class OrderController extends BaseController {
 	}
 
 	public function getCategorie($categorie) {
-		
+		return View::make('pages.order');
 	}
 }

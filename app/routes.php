@@ -1,12 +1,16 @@
 <?php
 
 Route::get('/', function(){
-	return View::make('hello');
+	if (Auth::check()){
+		return View::make('hello');
+	}else{
+		return Redirect::route('getLogin');
+	}
 });
 
 Route::group(array('before'=>'guest'), function(){
 	Route::get('/login', array('as'=>'getLogin','uses'=>'UserController@getLogin'));
-	Route::post('/login','UserController@postLogin');
+	Route::post('/login','UserController@postLogin')->before('csrf');
 });
 
 Route::group(array('before'=>'auth'), function(){

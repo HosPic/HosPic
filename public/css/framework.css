@@ -1,6 +1,36 @@
+/* Global Stylesheet */
+
 body {
 	background-color: #eeeeee;
+	color: #000000;
 }
+
+.navbar-default .navbar-nav > li > a {
+	color: #cbcbcb;
+	margin: 0 2px;
+}
+
+.navbar-default .navbar-brand {
+	color: #cbcbcb;
+	margin: 2px;
+}
+.navbar-default .navbar-brand:focus, 
+.navbar-default .navbar-brand:hover {
+	color: #ffffff;
+	margin: 2px;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:focus, 
+.navbar-default .navbar-nav > li > a:hover {
+	color: #ffffff;
+	background-color: transparent;
+	border-bottom: 3px #d38104 solid;
+	margin: 0 2px;
+}
+
 .primary_color {
 	background-color: #a5372d;
 }
@@ -9,32 +39,41 @@ body {
 	background-color: #d38104;
 }
 
-ul.right {
-	border-left: 1px #802017 solid;
-}
-
-.top-bar-section ul li,
-.top-bar-section li.active:not(.has-form) a:not(.button),
-.top-bar-section li:not(.has-form) a:not(.button),
-.top-bar-section ul li.active > a,
-.top-bar-section li.active:not(.has-form) a:hover:not(.button),
-.top-bar-section li:not(.has-form) a:hover:not(.button),
-.top-bar-section ul li:hover:not(.has-form) > a {
-	background: none;
-	margin: 0 2px;
-	color: #cbcbcb;
-}
-
-.top-bar-section li.active:not(.has-form) a:not(.button),
-.top-bar-section ul li.active > a,
-.top-bar-section li.active:not(.has-form) a:hover:not(.button),
-.top-bar-section li:not(.has-form) a:hover:not(.button),
-.top-bar-section ul li:hover:not(.has-form) > a {
-	border-bottom: 2px #d38104 solid;
+.button_secondary_color {
 	color: #ffffff;
+	background-color: #d38104;
+	border-color: #c17706;
 }
 
-.top-bar,
-.top-bar .title-area {
-	height: 47px;
+.button_secondary_color:hover {
+	color: #ffffff;
+	background-color: #c17706;
 }
+
+.navbar-right {
+	border-left: 2px #802017 solid;
+}
+
+.navbar {
+	margin-bottom: 0;
+	height: 58px;
+}
+
+.navbar-nav {
+	margin: 2px 0px;
+}
+
+.navbar-header {
+	height: 56px;
+}
+
+.search_bar {
+	width: 100%;
+	background-color: #ffffff;
+	height: 50px;
+	padding: 5px 0;
+	border-bottom: 1px #c5c5c5 solid;
+	box-shadow: #dadada 0 2px 2px 0;  
+}
+
+/* Media Queries below this line*/

@@ -3,8 +3,7 @@
 
 <title>HosPic Bestelsysteem</title>
 
-{{ HTML::style("css/normalize.css") }}
-{{ HTML::style("css/foundation.css") }}
+{{ HTML::style("css/bootstrap.min.css") }}
 
 {{-- Custom global stylesheet --}}
 {{ HTML::style("css/framework.css") }}

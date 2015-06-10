@@ -8,6 +8,10 @@ Route::get('/', function(){
 	}
 });
 
+Route::get('/testview', function(){
+	return View::make('pages/order');
+});
+
 Route::group(array('before'=>'guest'), function(){
 	Route::get('/login', array('as'=>'getLogin','uses'=>'UserController@getLogin'));
 	Route::post('/login','UserController@postLogin')->before('csrf');

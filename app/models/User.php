@@ -14,9 +14,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 
 	public function canView($page){
-		$pages = array(	'voorraad beheer'=>array('Administratie'),
+		$pages = array(	'voorraad beheer'=>array('administratie'),
 						'bezorglijst'=>array('ict','magazijn','facilitaire diensten'),
-						'statistieken'=>array('Directie')
+						'statistieken'=>array('directie')
 						);
 		if(!array_key_exists($page,$pages)){
 			return false;

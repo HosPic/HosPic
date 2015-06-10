@@ -16,13 +16,13 @@
 			<li><a href="{{ URL::route('getService'); }}">Dienst aanvragen</a></li>
 			<li><a href="{{ URL::route('getDeliver'); }}">Mijn aanvragen</a></li>
 			<li><a href="{{ URL::route('getMyOrders'); }}">Mijn bestellingen</a></li>
-			{{-- @if (User::canView("voorraad beheer")) --}}
+			@if (Auth::user()->canView("voorraad beheer"))
 				<li><a href="{{ URL::route('getArticles'); }}">Voorraad beheer</a></li>
-			{{-- @elseif (User::canView("bezorglijst")) --}}
+			@elseif (Auth::user()->canView("bezorglijst"))
 				<li><a href="{{ URL::route('getDeliver'); }}">Bezorglijst</a></li>
-			{{-- @elseif (User::canView("statistieken")) --}}
+			@elseif (Auth::user()->canView("statistieken"))
 				<li><a href="{{ URL::route('getStatistics'); }}">Statistieken</a></li>
-			{{-- @endif --}}
+			@endif
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="{{ URL::route('getLogout'); }}">Uitloggen</a></li>

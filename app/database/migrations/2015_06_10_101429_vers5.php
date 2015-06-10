@@ -14,7 +14,7 @@ class Vers5 extends Migration {
 	{
 		Schema::table('user', function($t)
 		{
-			$t->string('mail',50);
+			$t->string('email',50);
 		});
 	}
 

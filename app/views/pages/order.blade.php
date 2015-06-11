@@ -33,7 +33,7 @@
 						<ul class="nav nav-pills nav-stacked">
 							<li class="active"><a>Alles</a></li>
 							@foreach ($categories as $categorie)
-								<li><a>{{ $categorie->name }}</a></li>
+								<li data-category-id="{{ $categorie->id }}"><a>{{ $categorie->name }}</a></li>
 							@endforeach
 						</ul>
 					</div>

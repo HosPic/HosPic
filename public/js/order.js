@@ -1,10 +1,10 @@
 var category = {
-	orders : {},
 	getCategorie : function(id) {
 		$.ajax({
-			type : 'GET',
+			type : 'POST',
 			url : '/artikelen',
-			dataType : 'json',
+			// dataType : 'json',
+			data : {'category' : id},
 			success : function(response) {
 				console.log(response);
 			},
@@ -20,5 +20,7 @@ var category = {
 
 
 $('.nav-pills > li').on('click', function(e) {
-	category.show($(this).children().text());
+	category.show($(this).data('category-id'));
+	$('.nav-pills > li').removeClass('active');
+	$(this).addClass('active');
 });

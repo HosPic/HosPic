@@ -16,6 +16,7 @@ Route::group(array('before'=>'guest'), function() {
 Route::group(array('before'=>'auth'), function() {
 	Route::group(array('prefix'=>'artikelen'), function() {	
 		Route::get('/', array('as'=>'getArticles','uses'=>'ArticleController@index'));
+		Route::post('/', array('as'=>'getArticles','uses'=>'ArticleController@index'));
 		Route::get('/{id}', array('as'=>'getArticle','uses'=>'ArticleController@show'));
 		Route::get('/{id}/edit', array('as'=>'editArticle','uses'=>'ArticleController@edit'));
 

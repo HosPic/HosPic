@@ -41,8 +41,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 			'facilitaire diensten' => 'getDeliver',
 		);
 		foreach ($this->departments as $deparment) {
-			if(array_key_exists($deparment,$defaults)){
-				return $defaults[$deparment];
+			if(array_key_exists($deparment->name, $defaults)){
+				return $defaults[$deparment->name];
 			}
 		}
 		return 'getOrder';

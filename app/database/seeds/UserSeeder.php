@@ -2,7 +2,7 @@
 
 class UserSeeder extends Seeder{
 	public function run() {
-		DB::table('user')->delete();
+		DB::table('user')->truncate(); /*reset auto increment purpose(truncate)*/
 		DB::table('user_department')->delete();
 
 		$users = array(
@@ -87,8 +87,71 @@ class UserSeeder extends Seeder{
 
 		$user_departments = array(
 			array(
-
+				'user_id' => 1,
+				'department_id' => 4
 			),
+
+			array(
+				'user_id' => 2,
+				'department_id' => 7
+			),
+
+			array(
+				'user_id' => 2,
+				'department_id' => 6
+			),
+
+			array(
+				'user_id' => 2,
+				'department_id' => 10   
+			),
+
+			array(
+				'user_id' => 3,
+				'department_id' => 9
+			),
+
+			array(
+				'user_id' => 4,
+				'department_id' => 7
+			),
+
+			array(
+				'user_id' => 5,
+				'department_id' => 4
+			),
+
+			array(
+				'user_id' => 6,
+				'department_id' => 5
+			),
+
+			array(
+				'user_id' => 7,
+				'department_id' => 1
+			),
+
+			array(
+				'user_id' => 8,
+				'department_id' => 2
+			),
+
+			array(
+				'user_id' => 9,
+				'department_id' => 4
+			),
+
+
+			array(
+				'user_id' => 10,
+				'department_id' => 3
+			),
+
+			array(
+				'user_id' => 11,
+				'department_id' => 3
+			)
+
 		);
 
 		DB::table('user')->insert($users);

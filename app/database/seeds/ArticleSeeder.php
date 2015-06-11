@@ -2,11 +2,11 @@
 class ArticleSeeder extends Seeder{
 
 	public function run() {
-		DB::table('article')->delete();
-		DB::table('discarded')->delete();
-		DB::table('price')->delete();
-		DB::table('question')->delete();
-		DB::table('answer')->delete();
+		DB::table('article')->truncate();
+		DB::table('discarded')->truncate();
+		DB::table('price')->truncate();
+		DB::table('question')->truncate();
+		DB::table('answer')->truncate();
 
 		$article = array(
 		);

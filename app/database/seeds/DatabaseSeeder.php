@@ -6,7 +6,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('DepartmentSeeder');
+		$this->call('DepartmentSeeder');
 		$this->command->info('Dapartment table filled');
 		$this->call('TypeSeeder');
 		$this->command->info('Type table filled');

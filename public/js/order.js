@@ -2,7 +2,7 @@ var category = {
 	orders : {},
 	getCategorie : function(id) {
 		$.ajax({
-			type : 'POST',
+			type : 'GET',
 			url : '/artikelen',
 			dataType : 'json',
 			success : function(response) {

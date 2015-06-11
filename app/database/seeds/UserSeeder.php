@@ -4,12 +4,8 @@ class UserSeeder extends Seeder{
 	public function run() {
 		DB::table('user')->delete();
 		DB::table('user_department')->delete();
-		DB::table('department')->delete();
-		DB::table('type')->delete();
 
-
-		$user = array(
-
+		$users = array(
 			array(
 				'type_id' => 1,
 				'first_name' => 'Leon',
@@ -17,7 +13,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'ladmiraal@nmc.nl'
 			),
-
 			array(
 				'type_id' => 1,
 				'first_name' => 'Malin',
@@ -25,7 +20,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'mbakker@nmc.nl'
 			),
-
 			array(
 				'type_id' => 1,
 				'first_name' => 'Mark',
@@ -33,7 +27,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'mvels@nmc.nl'
 			),
-
 			array(
 				'type_id' => 1,
 				'first_name' => 'Frank',
@@ -41,7 +34,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'fblom@nmc.nl'
 			),
-
 			array(
 				'type_id' => 2,
 				'first_name' => 'Paul',
@@ -49,7 +41,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'pjurriens@nmc.nl'
 			),
-
 			array(
 				'type_id' => 2,
 				'first_name' => 'Jesper',
@@ -57,7 +48,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'jplug@nmc.nl'
 			),
-
 			array(
 				'type_id' => 2,
 				'first_name' => 'Bert',
@@ -65,7 +55,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'bgiebels@nmc.nl'
 			),
-
 			array(
 				'type_id' => 2,
 				'first_name' => 'Theo',
@@ -73,7 +62,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'ttromp@nmc.nl'
 			),
-
 			array(
 				'type_id' => 3,
 				'first_name' => 'Wouter',
@@ -81,7 +69,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'whezel@nmc.nl'
 			),
-
 			array(
 				'type_id' => 4,
 				'first_name' => 'Alie',
@@ -89,7 +76,6 @@ class UserSeeder extends Seeder{
 				'password' => Hash::make('123'),
 				'email' => 'ablokhuis@nmc.nl'
 			),
-
 			array(
 				'type_id' => 5,
 				'first_name' => 'Sander',
@@ -99,59 +85,13 @@ class UserSeeder extends Seeder{
 			)
 		);
 
-		$department = array(
-
-			array(
-				'name' => 'Magazijn',
-				'manager' => 7
-			),
-		);
-
-		$type = array(
-
-			array(
-				'name' => 'Medewerker',
-				'budget' => 500
-			),
-
-			array(
-				'name' => 'Hoofd',
-				'budget' => 5000
-			),
-
-			array(
-				'name' => 'Managers',
-				'budget' => 50000
-			),
-
-			array(
-				'name' => 'Directie Secretaresse',
-				'budget' => 150000
-			),
-
-			array(
-				'name' => 'Directeur',
-				'budget' => 1500000
-			),
-
-			array(
-				'name' => 'CVB'
-			)
-		);
-
-		$user_department = array(
-
+		$user_departments = array(
 			array(
 
 			),
 		);
 
-
-		DB::table('user')->insert($user);
-
+		DB::table('user')->insert($users);
+		DB::table('user_department')->insert($user_departments);
 	}
-
 }
-
-
-?>

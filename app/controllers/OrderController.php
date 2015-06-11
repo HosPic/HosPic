@@ -6,8 +6,11 @@ class OrderController extends BaseController {
 		return View::make('pages.order');
 	}
 		
-	public function show() {
-		
+	public function show($id) {
+		if (Request::wantsJson()){
+			return Response::json(Order::find($id));
+		}
+		return 'lol';
 	}
 
 	public function special() {

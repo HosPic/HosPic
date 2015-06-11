@@ -25,6 +25,7 @@ body {
 	height: 100%;
 	overflow-y:scroll;
 	background: #501B16;
+	padding-bottom: 58px;
 }
 .order {
 	cursor: pointer;

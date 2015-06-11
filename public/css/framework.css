@@ -7,17 +7,18 @@ body {
 
 .navbar-default .navbar-nav > li > a {
 	color: #cbcbcb;
-	margin: 0 2px;
+	padding: 15px 0;
+	margin: 0 15px;
 }
 
 .navbar-default .navbar-brand {
 	color: #cbcbcb;
-	margin: 2px;
+	height: 53px;
 }
 .navbar-default .navbar-brand:focus, 
 .navbar-default .navbar-brand:hover {
 	color: #ffffff;
-	margin: 2px;
+	background-color: #d38104;
 }
 
 .navbar-default .navbar-nav > .active > a, 
@@ -28,7 +29,6 @@ body {
 	color: #ffffff;
 	background-color: transparent;
 	border-bottom: 3px #d38104 solid;
-	margin: 0 2px;
 }
 
 .primary_color {
@@ -56,15 +56,11 @@ body {
 
 .navbar {
 	margin-bottom: 0;
-	height: 58px;
-}
-
-.navbar-nav {
-	margin: 2px 0px;
+	border-radius: 0;
+	border: none;
 }
 
 .navbar-header {
-	height: 56px;
 	position: relative;
 	z-index: 15;
 }
@@ -78,7 +74,6 @@ body {
 	box-shadow: #dadada 0 2px 2px 0;  
 }
 
-<<<<<<< HEAD
 .navbar-collapse {
 	position: relative;
 	z-index: 10;

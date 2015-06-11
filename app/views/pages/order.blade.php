@@ -31,9 +31,9 @@
 					<div class="panel-heading">Categorieën</div>
 					<div class="panel-body">
 						<ul class="nav nav-pills nav-stacked">
-							<li class="{{ HTML::activeState('bestellen') }}"><a href="{{ URL::route('getOrder') }}">Alles</a></li>
+							<li class="active"><a>Alles</a></li>
 							@foreach ($categories as $categorie)
-								<li class="{{ HTML::activeState('bestellen/' . $categorie->name) }}"><a href="{{ URL::route('getCategorie', $categorie->name) }}">{{ $categorie->name }}</a></li>
+								<li><a>{{ $categorie->name }}</a></li>
 							@endforeach
 						</ul>
 					</div>
@@ -50,4 +50,5 @@
 @stop
 
 @section('script')
+	{{ HTML::script('js/order.js')}}
 @stop

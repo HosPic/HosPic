@@ -3,7 +3,13 @@
 class ArticleController extends BaseController {
 
 	public function index() {
-		// return View::make('pages.')
+		if (Request::wantsJson()) {
+			// $response = Article::all()->take(20);
+			return Response::json(Article::all());
+		} else {
+			// return View::make('pages.')
+		}
+		return 'lol';
 	}
 	
 	public function show($id) {

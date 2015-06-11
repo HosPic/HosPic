@@ -31,6 +31,7 @@ a:hover {
 
 .nav-pills > li > a {
 	border-radius: 0;
+	cursor: pointer;
 }
 
 .nav-stacked > li + li {

@@ -18,9 +18,11 @@
 			<li class="{{ HTML::activeState('bestellingen') }}"><a href="{{ URL::route('getMyOrders'); }}">Mijn bestellingen</a></li>
 			@if (Auth::user()->canView("voorraad beheer"))
 				<li class="{{ HTML::activeState('artikelen') }}"><a href="{{ URL::route('getArticles'); }}">Voorraad beheer</a></li>
-			@elseif (Auth::user()->canView("bezorglijst"))
+			@endif
+			@if (Auth::user()->canView("bezorglijst"))
 				<li class="{{ HTML::activeState('leveringen') }}"><a href="{{ URL::route('getDeliver'); }}">Bezorglijst</a></li>
-			@elseif (Auth::user()->canView("statistieken"))
+			@endif
+			@if (Auth::user()->canView("statistieken"))
 				<li class="{{ HTML::activeState('statistieken') }}"><a href="{{ URL::route('getStatistics'); }}">Statistieken</a></li>
 			@endif
 		</ul>

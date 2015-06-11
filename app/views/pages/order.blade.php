@@ -8,6 +8,10 @@
 	{{ HTML::style("css/order.css")}}
 @stop
 
+@section('title')
+	- Bestellen
+@stop
+
 @section('searchbar')
 	<form class="form-inline">
 		<div class="col-md-4">
@@ -27,11 +31,12 @@
 					<div class="panel-heading">Categorieën</div>
 					<div class="panel-body">
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="#">Medisch</a></li>
-							<li><a href="#">Kantoor</a></li>
-							<li class="active"><a href="#">ICT</a></li>
-							<li><a href="#">Huishoudelijk</a></li>
-							<li><a href="#">Meubilair</a></li>
+							<li class="{{ HTML::activeState('bestellen') }}"><a href="{{ URL::route('getOrder') }}">Alles</a></li>
+							<li class="{{ HTML::activeState('bestellen/medisch') }}"><a href="{{ URL::route('getCategorie', 'medisch') }}">Medisch</a></li>
+							<li class="{{ HTML::activeState('bestellen/kantoor') }}"><a href="{{ URL::route('getCategorie', 'kantoor') }}">Kantoor</a></li>
+							<li class="{{ HTML::activeState('bestellen/ict') }}"><a href="{{ URL::route('getCategorie', 'ict') }}">ICT</a></li>
+							<li class="{{ HTML::activeState('bestellen/huishoudelijk') }}"><a href="{{ URL::route('getCategorie', 'huishoudelijk') }}">Huishoudelijk</a></li>
+							<li class="{{ HTML::activeState('bestellen/meubilair') }}"><a href="{{ URL::route('getCategorie', 'meubilair') }}">Meubilair</a></li>
 						</ul>
 					</div>
 				</div>
@@ -39,7 +44,7 @@
 			<div class="col-md-8">
 				Placeholder
 			</div>
-			<div class="col-md-2 shopping_cart">
+			<div id="shopping_cart" class="col-md-2">
 				Hoi
 			</div>
 		</div>

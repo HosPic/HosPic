@@ -32,11 +32,9 @@
 					<div class="panel-body">
 						<ul class="nav nav-pills nav-stacked">
 							<li class="{{ HTML::activeState('bestellen') }}"><a href="{{ URL::route('getOrder') }}">Alles</a></li>
-							<li class="{{ HTML::activeState('bestellen/medisch') }}"><a href="{{ URL::route('getCategorie', 'medisch') }}">Medisch</a></li>
-							<li class="{{ HTML::activeState('bestellen/kantoor') }}"><a href="{{ URL::route('getCategorie', 'kantoor') }}">Kantoor</a></li>
-							<li class="{{ HTML::activeState('bestellen/ict') }}"><a href="{{ URL::route('getCategorie', 'ict') }}">ICT</a></li>
-							<li class="{{ HTML::activeState('bestellen/huishoudelijk') }}"><a href="{{ URL::route('getCategorie', 'huishoudelijk') }}">Huishoudelijk</a></li>
-							<li class="{{ HTML::activeState('bestellen/meubilair') }}"><a href="{{ URL::route('getCategorie', 'meubilair') }}">Meubilair</a></li>
+							@foreach ($categories as $categorie)
+								<li class="{{ HTML::activeState('bestellen/' . $categorie->name) }}"><a href="{{ URL::route('getCategorie', $categorie->name) }}">{{ $categorie->name }}</a></li>
+							@endforeach
 						</ul>
 					</div>
 				</div>

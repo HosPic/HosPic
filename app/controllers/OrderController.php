@@ -3,7 +3,9 @@
 class OrderController extends BaseController {
 
 	public function index() {
-		return View::make('pages.order');
+		$categories = Category::all();
+
+		return View::make('pages.order', array('categories'=>$categories));
 	}
 		
 	public function show() {
@@ -15,6 +17,8 @@ class OrderController extends BaseController {
 	}
 
 	public function getCategorie($categorie) {
-		return View::make('pages.order');
+		$categories = Category::all();
+
+		return View::make('pages.order', array('categories'=>$categories));
 	}
 }

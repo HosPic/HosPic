@@ -9,7 +9,8 @@
 	border-bottom: none;
 }
 
-a:focus, a:hover {
+a:focus, 
+a:hover {
 	color: #535353;
 }
 
@@ -41,6 +42,10 @@ a:focus, a:hover {
 	height: 88vh;
 	padding-right: 0px;
 	color: #d9d9d9;
+}
+
+.nav-pills > li > a:first-letter {
+	text-transform: uppercase;
 }
 
 /* Media Queries below this line */

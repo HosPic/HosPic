@@ -3,7 +3,8 @@
 class OrderArticle extends Eloquent {
 
 	protected $table = 'order_article';
-
+	public $timestamps = false;
+	
 	public function article(){
 
 		return $this->hasOne('Article')

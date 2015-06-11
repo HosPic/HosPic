@@ -3,7 +3,8 @@
 class Article extends Eloquent {
 
 	protected $table = 'article';
-
+	public $timestamps = false;
+	
 	public function category(){
 
 		return $this->hasOne('Category');

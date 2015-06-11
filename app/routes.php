@@ -2,7 +2,7 @@
 
 Route::get('/', function() {
 	if (Auth::check()) {
-		return Redirect::route('getOrder');
+		return Redirect::route(Auth::user()->getDefaultPage());
 	} else {
 		return Redirect::route('getLogin');
 	}
@@ -29,6 +29,7 @@ Route::group(array('before'=>'auth'), function() {
 	Route::get('/leveringen', array('as'=>'getDeliver','uses'=>'DeliverController@index'));
 	Route::get('/aanvragen', array('as'=>'getMyServices','uses'=>'ServiceController@show'));
 	Route::get('/bestellingen', array('as'=>'getMyOrders','uses'=>'OrderController@show'));
+
 	Route::group(array('prefix'=>'bestellen'), function() {
 		Route::get('/', array('as'=>'getOrder','uses'=>'OrderController@index'));
 		Route::get('/{categorie}', array('as'=>'getCategorie','uses'=>'OrderController@getCategorie'));

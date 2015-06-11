@@ -14,9 +14,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 
 	public function canView($page){
-		$pages = array(	'voorraad beheer'=>array('administratie'),
-						'bezorglijst'=>array('ict','magazijn','facilitaire diensten'),
-						'statistieken'=>array('directie')
+		$pages = array(	'getArticles'=>array('administratie'),
+						'getDeliver'=>array('ict','magazijn','facilitaire diensten'),
+						'getStatistics'=>array('directie')
 						);
 		if(!array_key_exists($page,$pages)){
 			return false;
@@ -27,6 +27,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 			}
 		}
 		return false;
+	}
+
+	public function getDefaultPage()
+	{
+		$defaults = array(
+			'directie' => 'getStatistics'
+			'administratie' => 'getArticles',
+			'ict' => 'getDeliver',
+			'magazijn' => 'getDeliver',
+			'facilitaire diensten' => 'getDeliver',
+		);
+		foreach ($this->departments as $deparment) {
+			if(!array_key_exists($deparment,$defaults)){
+				return $defaults[$deparment];
+			}
+		}
+		return 'getOrder';
 	}
 
 	// Relations

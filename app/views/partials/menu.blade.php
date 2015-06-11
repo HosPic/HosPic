@@ -16,13 +16,13 @@
 			<li class="{{ HTML::activeState('diensten') }}"><a href="{{ URL::route('getService'); }}">Dienst aanvragen</a></li>
 			<li class="{{ HTML::activeState('aanvragen') }}"><a href="{{ URL::route('getMyServices'); }}">Mijn aanvragen</a></li>
 			<li class="{{ HTML::activeState('bestellingen') }}"><a href="{{ URL::route('getMyOrders'); }}">Mijn bestellingen</a></li>
-			@if (Auth::user()->canView("voorraad beheer"))
+			@if (Auth::user()->canView("getArticles"))
 				<li class="{{ HTML::activeState('artikelen') }}"><a href="{{ URL::route('getArticles'); }}">Voorraad beheer</a></li>
 			@endif
-			@if (Auth::user()->canView("bezorglijst"))
+			@if (Auth::user()->canView("getDeliver"))
 				<li class="{{ HTML::activeState('leveringen') }}"><a href="{{ URL::route('getDeliver'); }}">Bezorglijst</a></li>
 			@endif
-			@if (Auth::user()->canView("statistieken"))
+			@if (Auth::user()->canView("getStatistics"))
 				<li class="{{ HTML::activeState('statistieken') }}"><a href="{{ URL::route('getStatistics'); }}">Statistieken</a></li>
 			@endif
 		</ul>

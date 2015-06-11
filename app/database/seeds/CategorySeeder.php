@@ -2,7 +2,7 @@
 class CategorySeeder extends Seeder{
 
 	public function run() {
-		DB::table('category')->delete();
+		DB::table('category')->truncate();
 
 		/*0=article, 1=both 2=service*/
 		$categories = array(

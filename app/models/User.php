@@ -32,14 +32,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getDefaultPage()
 	{
 		$defaults = array(
-			'directie' => 'getStatistics'
+			'directie' => 'getStatistics',
 			'administratie' => 'getArticles',
 			'ict' => 'getDeliver',
 			'magazijn' => 'getDeliver',
 			'facilitaire diensten' => 'getDeliver',
 		);
 		foreach ($this->departments as $deparment) {
-			if(!array_key_exists($deparment,$defaults)){
+			if(array_key_exists($deparment,$defaults)){
 				return $defaults[$deparment];
 			}
 		}

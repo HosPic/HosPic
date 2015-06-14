@@ -3,9 +3,15 @@
 class OrderController extends BaseController {
 
 	public function index() {
-		$categories = Category::where('type', '<', 2)->orderBy('name')->get();
+		if (Request::ajax()) {
+			return Response::json(Article::with('Price')->orderBy('name')->skip(Input::get('offset'))->take(10)->get());
+		} else {
+			$categories = Category::where('type', '<', 2)->orderBy('name')->get();
+			$products = Article::with('Price')->orderBy('name')->take(10)->get();
+			// $products['price'] = Article::find(1)->price;
 
-		return View::make('pages.order', array('categories'=>$categories));
+			return View::make('pages.order', array('categories'=>$categories, 'products'=>$products));
+		}
 	}
 		
 	public function show() {

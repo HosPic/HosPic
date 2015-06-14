@@ -8,10 +8,6 @@
 	{{ HTML::style("css/order.css")}}
 @stop
 
-@section('title')
-	- Bestellen
-@stop
-
 @section('searchbar')
 	<form class="form-inline">
 		<div class="col-md-4">
@@ -40,10 +36,32 @@
 				</div>
 			</div>
 			<div class="col-md-8">
-				Placeholder
+				<div id="product_header" class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4 padding_10">Artikel</div>
+					<div class="col-md-2 padding_10">Eenheid</div>
+					<div class="col-md-2 padding_10">Prijs per eenheid</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div id="product_list">
+					@foreach ($products as $product)
+						<div class="row">
+							<div class="col-md-2 padding_10">
+								<img src="{{ $product->picture }}">
+							</div>
+							<div class="col-md-4 product_article">{{ $product->name }}</div>
+							<div class="col-md-2 product_unit">{{ $product->unit }}</div>
+							<div class="col-md-2 product_price">{{ $product->price }}</div>
+							<div class="col-md-2 product_input">Input</div>
+						</div>
+					@endforeach
+				</div>
 			</div>
-			<div id="shopping_cart" class="col-md-2">
-				Hoi
+			<div class="col-md-2">
+				<div id="shopping_cart" class="row">
+					<div>Winkelwagen</div>
+					<div></div>
+				</div>
 			</div>
 		</div>
 	</div>

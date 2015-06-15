@@ -29,9 +29,14 @@
 		</div>
 
 		<div class="col-md-8">
-		<div id="testadd">
-				<p>test</p>
-
+		<div id="new-article-align">
+				
+		<button onclick="test()" class="btn btn-default button_secondary_color">+ Artikel</button>
+		<script type="text/javascript">
+		function test() {
+    		alert("javascript werkt");
+		}
+		</script>
 		</div>
 	
 			
@@ -50,7 +55,7 @@
 			</div>	
 		</div>
 
-  		<div class="col-md-2">
+  		<div class="col-md-2" id="notifications">
   			<div id="test2">
 				<p>ebola</p>
 			</div>	

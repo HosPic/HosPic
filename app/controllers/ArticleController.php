@@ -4,7 +4,6 @@ class ArticleController extends BaseController {
 
 	public function index() {
 		if (Request::ajax()) {
-			//$res = Article::all();
 			$res = Article::select('*')->orderBy('name');
 			if (Input::has('category')) {
 				$res->where('category_id', '=', Input::get('category', 0));

@@ -52,7 +52,12 @@
 							<div class="col-md-4 product_article">{{ $product->name }}</div>
 							<div class="col-md-2 product_unit">{{ $product->unit }}</div>
 							<div class="col-md-2 product_price">{{ $product->price[0]->price }}</div>
-							<div class="col-md-2 product_input">Input</div>
+							<div class="col-md-2 product_input">
+								<div class="form-group">
+									<input type="text" class="form control" value="1">
+									<button type="submit" class="btn btn-default button_secondary_color">+</button>
+								</div>
+							</div>
 						</div>
 					@endforeach
 				</div>

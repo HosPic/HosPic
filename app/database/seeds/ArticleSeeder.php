@@ -12,24 +12,24 @@ class ArticleSeeder extends Seeder{
 			array(
 				'category_id' => 3,
 				'name' => 'blusdeken',
-				'unit' => 'Stuks',
+				'unit' => 'stuks',
 				'minimal_supply' => 15,
 				'date_of_creation' => '0000-00-00 00:00:00',
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 3,
 				'name' => 'oogspoeling',
-				'unit' => 'Stuks',
+				'unit' => 'stuks',
 				'minimal_supply' => 15,
 				'date_of_creation' => '0000-00-00 00:00:00',
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 4,
@@ -40,7 +40,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 5,
@@ -51,7 +51,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 5,
@@ -62,7 +62,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 5,
@@ -73,7 +73,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 6,
@@ -84,7 +84,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 7,
@@ -95,7 +95,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 8,
@@ -106,7 +106,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 9,
@@ -117,7 +117,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 9,
@@ -128,7 +128,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 9,
@@ -139,7 +139,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => 'beschrijving',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 			array(
 				'category_id' => 1,
@@ -150,7 +150,7 @@ class ArticleSeeder extends Seeder{
 				'special' => false,
 				'hidden' => false,
 				'description' => '8GB',
-				'picture' => '/content/lol.png'
+				'picture' => '/img/products/100x100.png'
 			),
 
 		);

@@ -7,62 +7,62 @@ class DepartmentSeeder extends Seeder{
 
 		$departments = array(
 			array(
-				'name' => 'Magazijn',
+				'name' => 'magazijn',
 				'manager' => 7
 			),
 
 			array(
-				'name' => 'Facilitaire Diensten', /*Technische Dienst*/
+				'name' => 'facilitaire diensten', /*Technische Dienst*/
 				'manager' => 8
 			),
 
 			array(
-				'name' => 'Directie',
+				'name' => 'directie',
 				'manager' => 10
 			),
 
 			array(
-				'name' => 'ICT',
+				'name' => 'ict',
 				'manager' => 9
 			),
 
 			array(
-				'name' => 'Administratie',
+				'name' => 'administratie',
 				'manager' => 6
 			),
 
 			array(
-				'name' => 'Keuken',
+				'name' => 'jeuken',
 				'manager' => 11
 			),
 
 			array(
-				'name' => 'Verpleging',
+				'name' => 'verpleging',
 				'manager' => 11
 			),
 
 			array(
-				'name' => 'Medisch-overig',
+				'name' => 'medisch-overig',
 				'manager' => 11
 			),
 
 			array(
-				'name' => 'Artsen',
+				'name' => 'artsen',
 				'manager' => 11
 			),
 
 			array(
-				'name' => 'Chirurgie',
+				'name' => 'chirurgie',
 				'manager' => 11
 			),
 
 			array(
-				'name' => 'Kantoor-overig',
+				'name' => 'kantoor-overig',
 				'manager' => 11
 			),
 
 			array(
-				'name' => 'PSZ',
+				'name' => 'psz',
 				'manager' => 11
 			)
 

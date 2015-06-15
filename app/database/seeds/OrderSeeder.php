@@ -7,6 +7,14 @@ class OrderSeeder extends Seeder{
 		DB::table('order_answer')->delete();
 
 		$orders = array(
+			array(
+				'user_id' => 1,
+				'department_id' => 1,
+				'order_date' => '0000-00-00 00:00:00',
+				'delivery_date' => '0000-00-00 00:00:00',
+				'prefered_days' => '1,2,3,4,5,6,7',
+				
+			),
 		);
 		$order_articles = array(
 		);

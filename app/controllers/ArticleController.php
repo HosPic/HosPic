@@ -3,7 +3,7 @@
 class ArticleController extends BaseController {
 
 	public function index() {
-		 return View::make('pages/article')
+		 return View::make('pages/article');
 	}
 	
 	public function show($id) {

@@ -2,7 +2,7 @@
 class TypeSeeder extends Seeder{
 
 	public function run() {
-		DB::table('type')->delete();
+		DB::table('type')->truncate();
 		
 		$types = array(
 			array(

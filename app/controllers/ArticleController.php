@@ -4,12 +4,22 @@ class ArticleController extends BaseController {
 
 	public function index() {
 		if (Request::ajax()) {
-			// $response = Article::all()->take(20);
-			if (Input::get('category')) {
-				return Response::json(Article::where('category_id', '=', Input::get('category'))->get());
-			} else {
-				return Response::json(Article::all());
+			//$res = Article::all();
+			$res = Article::select('*')->orderBy('name');
+			if (Input::has('category')) {
+				$res->where('category_id', '=', Input::get('category', 0));
 			}
+
+			$ret['count'] = $res->count();
+
+			if (Input::get('skip') > 1) {
+				$res->skip(Input::get('skip'));
+			}
+	
+			$res->take(10);
+			$ret['data'] = $res->get();
+
+			return Response::json($ret);
 		} else {
 			// return View::make('pages.');
 		}

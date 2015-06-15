@@ -4,6 +4,8 @@ class Article extends Eloquent {
 
 	protected $table = 'article';
 	public $timestamps = false;
+
+	public $with = array('price');
 	
 	public function category(){
 
@@ -17,7 +19,7 @@ class Article extends Eloquent {
 
 	public function price(){
 
-		return $this->hasMany('Price');
+		return $this->hasMany('Price')->where('supply', '>', 0);
 	}
 
 }

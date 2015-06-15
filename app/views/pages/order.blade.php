@@ -51,7 +51,7 @@
 							</div>
 							<div class="col-md-4 product_article">{{ $product->name }}</div>
 							<div class="col-md-2 product_unit">{{ $product->unit }}</div>
-							<div class="col-md-2 product_price">{{ $product->price }}</div>
+							<div class="col-md-2 product_price">{{ $product->price[0]->price }}</div>
 							<div class="col-md-2 product_input">Input</div>
 						</div>
 					@endforeach

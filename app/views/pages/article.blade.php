@@ -1,6 +1,3 @@
-<?php
-phpinfo();
-die();
 @extends('layout.master')
 
 @section('title')

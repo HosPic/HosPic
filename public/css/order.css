@@ -59,6 +59,10 @@ a:hover {
 .product_input {
 	margin: 45px 0 0;
 }
+.product_article:first-letter,
+.product_unit:first-letter {
+	text-transform: uppercase;
+}
 
 #product_header {
 	border-bottom: 1px #454545 solid;
@@ -70,6 +74,17 @@ a:hover {
 	overflow-x: hidden;
 	margin-right: -15px;
 	margin-left: -15px;
+}
+
+.form-control {
+	width: 50%;
+	display: inline-block;
+}
+
+#shopping_cart_header {
+	margin: 0 3px;
+	padding: 0 55px;
+	border-bottom: 2px #d9d9d9 solid;
 }
 
 /* Media Queries below this line */

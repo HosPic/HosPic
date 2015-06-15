@@ -34,17 +34,15 @@ function loadArticles(products) {
 	skip = skip + products.data.length;
 	$.each(products.data, function(index, value) {
 		var html = "<div class=\"row\"> \
-						<div class=\"col-md-2 padding_10\"> \
+						<div class=\"col-sm-2 padding_10\"> \
 							<img src=\"" + value.picture + "\"> \
 						</div> \
-						<div class=\"col-md-4 product_article\">" + value.name + "</div> \
-						<div class=\"col-md-2 product_unit\">" + value.unit + "</div> \
-						<div class=\"col-md-2 product_price\">" + value.price[0].price + "</div> \
-						<div class=\"col-md-2 product_input\"> \
-							<div class=\"form-group\"> \
-								<input type=\"text\" class=\"form control\" value=\"1\"> \
-								<button type=\"submit\" class=\"btn btn-default button_secondary_color\">+</button> \
-							</div> \
+						<div class=\"col-sm-4 product_article\">" + value.name + "</div> \
+						<div class=\"col-sm-2 product_unit\">" + value.unit + "</div> \
+						<div class=\"col-sm-2 product_price\">&#8364; " + value.price[0].price + "</div> \
+						<div class=\"col-sm-2 product_input\"> \
+							<input type=\"text\" class=\"form-control\" value=\"1\"> \
+							<button type=\"submit\" class=\"btn btn-default button_secondary_color button_add\" data-article-id=\"" + value.id + "\">+</button> \
 						</div> \
 					</div>"
 		$('#product_list').append(html);
@@ -56,6 +54,20 @@ function loadArticles(products) {
 	} else {
 		enableLoad = true;
 	}
+}
+
+function saveCart(product_id, product_amount) {
+	$.ajax({
+		type : "POST",
+		url : '/bestellen',
+		data : {'product_id' : product_id, 'product_amount' : product_amount},
+		success : function(response) {
+			console.log(response);
+		},
+		error : function(response) {
+			console.log(response);
+		}
+	});
 }
 
 // Click event for the categories
@@ -78,3 +90,9 @@ $('#product_list').bind('scroll', function() {
 		}
 	}
 });
+
+$('.button_add').on('click', function(e) {
+	var product_id = $(this).data('article-id');
+	var product_amount = $(this).parent().children('input').val();
+	saveCart(product_id, product_amount);
+})

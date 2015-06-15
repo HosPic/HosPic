@@ -3,10 +3,24 @@
 class OrderController extends BaseController {
 
 	public function index() {
-		$categories = Category::where('type', '<', 2)->orderBy('name')->get();
-		$products = Article::with('Price')->orderBy('name')->take(10)->get();
+		if (Request::ajax()) {
+			$product_id = Input::get('product_id');
+			$product_amount = Input::get('product_amount');
 
-		return View::make('pages.order', array('categories'=>$categories, 'products'=>$products));
+			
+			Session::push("shopping_cart.id", $product_id);
+			Session::push("shopping_cart.amount", $product_amount);
+			//Session::push("shopping_cart['product_id']", $product_id);
+			return Session::get('shopping_cart');
+		}
+
+		$categories = Category::where('type', '<', 2)->orderBy('name')->get();
+		$products = Article::orderBy('name')->take(10)->get();
+		if (Session::has('shopping_cart')) {
+			$shopping_cart = Article::find(Session::get('shopping_cart.id'));
+		}
+
+		return View::make('pages.order', array('categories'=>$categories, 'products'=>$products, 'shopping_cart'=>$shopping_cart));
 	}
 		
 	public function show() {

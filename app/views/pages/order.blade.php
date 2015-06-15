@@ -37,26 +37,24 @@
 			</div>
 			<div class="col-md-8">
 				<div id="product_header" class="row">
-					<div class="col-md-2"></div>
-					<div class="col-md-4 padding_10">Artikel</div>
-					<div class="col-md-2 padding_10">Eenheid</div>
-					<div class="col-md-2 padding_10">Prijs per eenheid</div>
-					<div class="col-md-2"></div>
+					<div class="col-sm-2"></div>
+					<div class="col-sm-4 padding_10">Artikel</div>
+					<div class="col-sm-2 padding_10">Eenheid</div>
+					<div class="col-sm-2 padding_10">Prijs per eenheid</div>
+					<div class="col-sm-2"></div>
 				</div>
 				<div id="product_list">
 					@foreach ($products as $product)
 						<div class="row">
-							<div class="col-md-2 padding_10">
+							<div class="col-sm-2 padding_10">
 								<img src="{{ $product->picture }}">
 							</div>
-							<div class="col-md-4 product_article">{{ $product->name }}</div>
-							<div class="col-md-2 product_unit">{{ $product->unit }}</div>
-							<div class="col-md-2 product_price">{{ $product->price[0]->price }}</div>
-							<div class="col-md-2 product_input">
-								<div class="form-group">
-									<input type="text" class="form control" value="1">
-									<button type="submit" class="btn btn-default button_secondary_color">+</button>
-								</div>
+							<div class="col-sm-4 product_article">{{ $product->name }}</div>
+							<div class="col-sm-2 product_unit">{{ $product->unit }}</div>
+							<div class="col-sm-2 product_price">&#8364; {{ $product->price[0]->price }}</div>
+							<div class="col-sm-2 product_input">
+								<input type="text" class="form-control" value="1">
+								<button type="submit" class="btn btn-default button_secondary_color button_add" data-article-id="{{ $product->id }}">+</button>
 							</div>
 						</div>
 					@endforeach
@@ -64,8 +62,16 @@
 			</div>
 			<div class="col-md-2">
 				<div id="shopping_cart" class="row">
-					<div>Winkelwagen</div>
-					<div></div>
+					<div id="shopping_cart_header">
+						<h3>Winkelwagen</h3>
+					</div>
+					<div id="shopping_cart_content">
+					@if ($shopping_cart)
+						@foreach ($shopping_cart as $cart)
+							<div>{{ $cart->name }}</div>
+						@endforeach
+					@endif
+					</div>
 				</div>
 			</div>
 		</div>

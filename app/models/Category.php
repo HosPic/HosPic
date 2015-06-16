@@ -1,8 +1,8 @@
 <?php
 
-class ArticleCategory extends Eloquent {
+class Category extends Eloquent {
 
-	protected $table = 'article_category';
+	protected $table = 'category';
 	public $timestamps = false;
 	
 }

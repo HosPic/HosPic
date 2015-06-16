@@ -3,7 +3,10 @@
 class ArticleController extends BaseController {
 
 	public function index() {
-		 return View::make('pages/article');
+		$categories = Category::where('type', '<', 2)->get();	
+		return Response::json($categories);
+		
+		 return View::make('pages/article')->with('');
 	}
 	
 	public function show($id) {

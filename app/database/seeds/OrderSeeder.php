@@ -13,6 +13,9 @@ class OrderSeeder extends Seeder{
 				'order_date' => '0000-00-00 00:00:00',
 				'delivery_date' => '0000-00-00 00:00:00',
 				'prefered_days' => '1,2,3,4,5,6,7',
+				'location_building' => 'gebouw 1337',
+				'location_room' => 'kamer 420',
+				'status' => 2
 				
 			),
 			array(
@@ -21,6 +24,9 @@ class OrderSeeder extends Seeder{
 				'order_date' => '0000-00-00 00:00:00',
 				'delivery_date' => '0000-00-00 00:00:00',
 				'prefered_days' => '1,2,3,4,5,6,7',
+				'location_building' => 'gebouw 1337',
+				'location_room' => 'kamer 420',
+				'status' => 1
 				
 			),
 			array(
@@ -29,6 +35,9 @@ class OrderSeeder extends Seeder{
 				'order_date' => '0000-00-00 00:00:00',
 				'delivery_date' => '0000-00-00 00:00:00',
 				'prefered_days' => '1,2,3,4,5,6,7',
+				'location_building' => 'gebouw 1337',
+				'location_room' => 'kamer 420',
+				'status' => 0
 				
 			)
 		);

@@ -255,7 +255,7 @@ class ArticleSeeder extends Seeder{
 				'question' => 'Hoeveel ogen heeft u?'
 			)
 		);
-		
+
 		$answer = array(
 			array(
 				'question_id' => 1,
@@ -281,13 +281,13 @@ class ArticleSeeder extends Seeder{
 				'question_id' => 3,
 				'answer' => '2 ogen'
 			)
-			
+
 		);
 
 		DB::table('article')->insert($article);
-		DB::table('discarded')->insert($discarded);
+		// DB::table('discarded')->insert($discarded);
 		DB::table('price')->insert($price);
 		DB::table('question')->insert($question);
-		DB::table('answer')->insert($answer);
+		// DB::table('answer')->insert($answer);
 	}
 }

@@ -16,7 +16,7 @@ class OrderSeeder extends Seeder{
 				'location_building' => 'gebouw 1337',
 				'location_room' => 'kamer 420',
 				'status' => 2
-				
+
 			),
 			array(
 				'user_id' => 2,
@@ -27,7 +27,7 @@ class OrderSeeder extends Seeder{
 				'location_building' => 'gebouw 1337',
 				'location_room' => 'kamer 420',
 				'status' => 1
-				
+
 			),
 			array(
 				'user_id' => 2,
@@ -38,7 +38,7 @@ class OrderSeeder extends Seeder{
 				'location_building' => 'gebouw 1337',
 				'location_room' => 'kamer 420',
 				'status' => 0
-				
+
 			)
 		);
 		$order_articles = array(
@@ -83,7 +83,7 @@ class OrderSeeder extends Seeder{
 
 		DB::table('order')->insert($orders);
 		DB::table('order_article')->insert($order_articles);
-		DB::table('order_answer')->insert($order_answers);
+		// DB::table('order_answer')->insert($order_answers);
 	}
 
 }

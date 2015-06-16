@@ -7,7 +7,7 @@ class RequestSeeder extends Seeder{
 		$requests = array(
 		);
 
-		DB::table('request')->insert($requests);
+		// DB::table('request')->insert($requests);
 	}
 
 }

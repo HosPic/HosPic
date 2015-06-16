@@ -3,7 +3,7 @@ class TypeSeeder extends Seeder{
 
 	public function run() {
 		DB::table('type')->truncate();
-		
+
 		$types = array(
 			array(
 				'name' => 'Medewerker',
@@ -27,7 +27,7 @@ class TypeSeeder extends Seeder{
 			),
 			array(
 				'name' => 'CVB',
-				'budget' => NULL
+				'budget' => 0
 			)
 		);
 

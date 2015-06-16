@@ -20,4 +20,9 @@ class Article extends Eloquent {
 		return $this->hasMany('Price');
 	}
 
+	public static function retrieve_articles($filter){
+		
+		return Article::all();
+	
+	}
 }

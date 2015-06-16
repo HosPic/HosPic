@@ -66,7 +66,7 @@
 						<h3>Winkelwagen</h3>
 					</div>
 					<div id="shopping_cart_content">
-					@if ($shopping_cart)
+					@if (!empty($shopping_cart))
 						@foreach ($shopping_cart as $cart)
 							<div>{{ $cart->name }}</div>
 						@endforeach

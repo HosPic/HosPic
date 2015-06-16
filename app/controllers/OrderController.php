@@ -16,6 +16,7 @@ class OrderController extends BaseController {
 
 		$categories = Category::where('type', '<', 2)->orderBy('name')->get();
 		$products = Article::orderBy('name')->take(10)->get();
+		$shopping_cart = NULL;
 		if (Session::has('shopping_cart')) {
 			$shopping_cart = Article::find(Session::get('shopping_cart.id'));
 		}

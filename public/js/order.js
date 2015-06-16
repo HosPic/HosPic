@@ -56,13 +56,13 @@ function loadArticles(products) {
 	}
 }
 
-function saveCart(product_id, product_amount) {
+function saveCart(product_id, product_amount, product_price, product_name) {
 	$.ajax({
 		type : "POST",
 		url : '/bestellen',
-		data : {'product_id' : product_id, 'product_amount' : product_amount},
+		data : {'product_id' : product_id, 'product_amount' : product_amount, 'product_price' : product_price, 'product_name' : product_name},
 		success : function(response) {
-			console.log(response);
+			// console.log(response);
 		},
 		error : function(response) {
 			console.log(response);
@@ -93,8 +93,9 @@ $('#product_list').bind('scroll', function() {
 
 $('.button_add').on('click', function(e) {
 	var product_id = $(this).data('article-id');
-	var product_amount = $(this).parent().parent().children('input').val();
-	var product_price = $(this).parent().children('product_price').text();
-	var product_name = $(this).parent().children('product_article').text();
-	saveCart(product_id, product_amount);
+	var product_amount = $(this).parent().children('input').val();
+	//console.log($(this).parent().parent().children('.product_price').text());
+	var product_price = $(this).parent().parent().children('.product_price').text();
+	var product_name = $(this).parent().parent().children('.product_article').text();
+	saveCart(product_id, product_amount, product_price, product_name);
 })

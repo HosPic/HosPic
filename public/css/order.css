@@ -45,6 +45,11 @@ a:hover {
 	color: #d9d9d9;
 }
 
+#shopping_cart input {
+	color: #555555;
+	width: 200%;
+}
+
 .nav-pills > li > a:first-letter {
 	text-transform: uppercase;
 }
@@ -59,6 +64,7 @@ a:hover {
 .product_input {
 	margin: 45px 0 0;
 }
+
 .product_article:first-letter,
 .product_unit:first-letter {
 	text-transform: uppercase;

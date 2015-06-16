@@ -68,7 +68,7 @@
 					<div id="shopping_cart_content">
 					@if (!empty($shopping_cart))
 						@foreach ($shopping_cart as $cart)
-							<div>{{ $cart->name }}</div>
+							<div>{{ $cart }}</div>
 						@endforeach
 					@endif
 					</div>

@@ -11,16 +11,16 @@
 @section('content')
 	<div id="content">
 		<div id="ordersBar">
-			@foreach (range(0,20) as $i)
-				<div class="order">
+			@foreach ($orders as $order)
+				<div class="order" id="order-{{$order->id}}" data-orderid="{{$order->id}}">
 					<div class="order-info">
-						<h3>Frank Blom<small>+31 612 345 678</small></h3>
+						<h3>{{$order->user->first_name . ' ' . $order->user->last_name}}<small>{{$order->user->email}}</small></h3>
 						<span>Kantoor overig</span>
 						<span>Gebouw 32</span>
 						<span>Kamer 12</span>
 					</div>
 					<div class="order-date">
-						<span>21 Mei</span>
+						<span>{{$order->delivery_date}}</span>
 					</div>
 				</div>
 			@endforeach

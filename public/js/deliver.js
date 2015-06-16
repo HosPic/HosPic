@@ -35,7 +35,7 @@ var delivery = {
 		}
 	},
 	show : function(id){
-		// remove html 
+		// remove html
 		// show loading screen
 		this.getOrder(id,function(order,success){
 			if(success){

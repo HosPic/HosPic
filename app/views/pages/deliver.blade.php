@@ -6,80 +6,23 @@
 
 @section('style')
 	{{ HTML::style("css/deliver.css")}}
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 @stop
 
 @section('content')
 	<div id="content">
 		<div id="ordersBar">
-			@foreach ($orders as $order)
-				<div class="order" id="order-{{$order->id}}" data-orderid="{{$order->id}}">
-					<div class="order-info">
-						<h3>{{$order->user->first_name . ' ' . $order->user->last_name}}<small>{{$order->user->email}}</small></h3>
-						<span>Kantoor overig</span>
-						<span>Gebouw 32</span>
-						<span>Kamer 12</span>
-					</div>
-					<div class="order-date">
-						<span>{{$order->delivery_date}}</span>
-					</div>
-				</div>
-			@endforeach
 		</div>
-		<div id="orderContent">
+		<div id="orderContent" class="">
 			<div id="orderInfo" class="row">
-				<div class="col-md-4">
-					<h2>Frank Blom</h2>
-					<span>+31 612 345 678</span>
-					<span>fblom&#64;nmc.nl</span>
-				</div>
-				<div class="col-md-4">
-					<b>Locatie</b>
-					<span>kantoor overig</span>
-					<span>Gebouw 23</span>
-					<span>Kamer 134</span>
-				</div>
-				<div class="col-md-4">
-					<b>Datum</b>
-					<span>Besteld: 24 mei</span>
-					<span>Levering: 25 mei</span>
-				</div>
 			</div>
 			<div id="orderArticles">
-				<table class="table">
-					<thead></thead>
-					<tbody>
-						<tr>
-							<th></th>
-							<th>ArtikelCode</th>
-							<th>ArtikelNaam</th>
-							<th>Locatie</th>
-							<th>Aantal</th>
-						</tr>
-						<tr>
-							<td></td>
-							<td>123456</td>
-							<td>Papier</td>
-							<td>GB34</td>
-							<td>28</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>123456</td>
-							<td>Papier</td>
-							<td>GB34</td>
-							<td>28</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>123456</td>
-							<td>Papier</td>
-							<td>GB34</td>
-							<td>28</td>
-						</tr>
-					</tbody>
-				</table>
 			</div>
-
+			<div id="orderLoader">
+				<p id="noSelect">Selecteer een bestelling</p>
+				<p id="loading"><span class="spin"></span> Bestelling laden...</p>
+				<p id="empty">Er zijn geen bestellingen meer!</p>
+			</div>
 		</div>
 	</div>
 @stop

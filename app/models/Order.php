@@ -11,6 +11,10 @@ class Order extends Eloquent {
 		return strftime("%e %b",strtotime($datetime));
 	}
 
+	public function getOrderDateAttribute($datetime){
+		return strftime("%e %b",strtotime($datetime));
+	}
+
 	// mutators
 
 	// relations

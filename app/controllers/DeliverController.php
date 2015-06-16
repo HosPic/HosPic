@@ -4,9 +4,9 @@ class DeliverController extends BaseController {
 
 	public function index() {
 		$orders = Order::whereIn('status',array(2,3))->get();
-		// if(Request::ajax()){
-			// return Response::json($orders);
-		// }
+		if(Request::ajax()){
+			return Response::json(array('orders'=>$orders));
+		}
 		return View::make('pages.deliver')->with('orders',$orders);
 	}
 

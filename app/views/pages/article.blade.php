@@ -65,24 +65,30 @@
 
 					
 				</div>
+				<?php $i=0 ?>
 				<div id="article_list">
 					@foreach ($articles as $article)
+						@foreach ($article->price as $price)
 						<div class="row">
 							<div class="col-sm-2 padding_10">
 								<img src="{{ $article->picture }}">
 							</div>
-							<div class="col-sm-4 article_article">{{ $article->name }}</div>
+							<div class="col-sm-4 article_name">{{ $article->name }}</div>
 							<div class="col-sm-2 article_unit">{{ $article->unit }}</div>
-							<div class="col-sm-2 article_price">&#8364; {{ $article->price[0]->price }}</div>
-							
+							<div class="col-sm-2 article_price">&#8364; {{ $price->price }}</div>
+ 							<div class="col-sm-2 article_supply">{{ $price->supply}}</div>
+						<?php $i++ ?>	
 						</div>
+						@endforeach
 					@endforeach
 				</div>
+
 		</div>
 
   		<div class="col-md-2" id="notifications">
   			<div id="test2">
 				<p>ebola</p>
+				{{$i . "&nbsp;" . "artikelen zijn geladen (geeft aan of meer prijzen dan artikelen zijn"}}
 			</div>	
   			
   		</div>
@@ -95,4 +101,4 @@
 
 @section('script')
 	{{ HTML::script('js/article.js')}}
-@stop
+@stop -

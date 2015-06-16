@@ -10,10 +10,13 @@ class ArticleController extends BaseController {
 		$categories = Category::where('type', '<', 2)->get();
 /*		$articles = Article::retrieve_articles($filter);	
 */		/*return Response::json($articles);*/
-		$articles = Article::orderBy('name')->take(10)->get();
+		
 		
 
-		 return View::make('pages/article')->with('categories',$categories)->with('articles',$articles);
+		$articles = Article::orderBy('name')->with('Price')->get();
+		
+/*		return Response::json($articles);
+*/		 return View::make('pages/article')->with('categories',$categories)->with('articles',$articles);
 	}
 	
 	public function show($id) {

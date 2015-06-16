@@ -166,6 +166,12 @@ class ArticleSeeder extends Seeder{
 				'location' => 'D12'
 			),
 			array(
+				'article_id' => 1,
+				'supply' => 80,
+				'price' => 4.50,
+				'location' => 'D12'
+			),
+			array(
 				'article_id' => 2,
 				'supply' => 250,
 				'price' => 4.20,

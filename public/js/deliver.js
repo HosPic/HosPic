@@ -50,40 +50,18 @@ var delivery = {
 			}
 		});
 	},
-	getOrder : function(id,callback){
-		// get all the data
-		if(id in this.orders) {
-			callback(this.orders[id]);
-		}else{
-			$.ajax({
-				type : 'GET',
-				url : '/bestellingen/' + id,
-				dataType : 'json',
-				success : function(response){
-					console.log(response);
-					// delivery.orders[response.id] = response;
-					// delivery.orders[response.id] = response;
-					// callback(response,true);
-				},
-				error : function(response){
-					// callback(response,false)
-					console.log(response);
-				}
-			});
-		}
-	},
 	buildOrderInfo : function(order){
-		var html = "<div class=\"col-md-4\"> \
+		var html = "<div class=\"col-xs-4\"> \
 					<h2>"+order['user']['first_name'] + ' ' + order['user']['last_name']+"</h2> \
 					<span>"+order['department']['name']+"</span> \
 					<span>"+order['user']['email']+"</span> \
 				</div> \
-				<div class=\"col-md-4\"> \
+				<div class=\"col-xs-4\"> \
 					<b>Locatie</b> \
 					<span>"+order['location_building']+"</span> \
 					<span>"+order['location_room']+"</span> \
 				</div> \
-				<div class=\"col-md-4\"> \
+				<div class=\"col-xs-4\"> \
 					<b>Datum</b> \
 					<span>Besteld: "+order['order_date']+"</span> \
 					<span>Levering: "+order['delivery_date']+"</span> \
@@ -107,6 +85,8 @@ var delivery = {
 	},
 	showOrder : function(id){
 		if(id in this.orders) {
+			$("#ordersBar .order").removeClass('active');
+			$("#ordersBar #order-"+id).addClass('active');
 			var order = this.orders[id];
 			this.buildOrderInfo(order);
 			this.buildArticles(order.articles);

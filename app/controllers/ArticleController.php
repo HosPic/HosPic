@@ -23,7 +23,7 @@ class ArticleController extends BaseController {
 			$categories = Category::where('type', '<', 2)->orderBy('name')->get();
 			$products = Article::orderBy('name')->take(10)->get();
 
-			return View::make('pages.article', array('categories'=>$categories, 'products'=>$products));
+			return View::make('pages.article', array('categories'=>$categories, 'articles'=>$products));
 		}
 		return 'lol';
 	}

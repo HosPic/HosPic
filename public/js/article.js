@@ -32,20 +32,19 @@ function loadData(category_id, s, append) {
 // Global function to append new items
 function loadArticles(articles) {
 	skip = skip + articles.data.length;
-	$.each(articles.data, function(index, value) {
-		var html = "<div class=\"row\"> \
-						<div class=\"col-sm-2 padding_10\"> \
-							<img src=\"" + value.picture + "\"> \
-						</div> \
-						<div class=\"col-sm-4 article_article\">" + value.name + "</div> \
-						<div class=\"col-sm-2 article_unit\">" + value.unit + "</div> \
-						<div class=\"col-sm-2 article_price\">&#8364; " + value.price[0].price + "</div> \
-						<div class=\"col-sm-2 article_input\"> \
-							<input type=\"text\" class=\"form-control\" value=\"1\"> \
-							<button type=\"submit\" class=\"btn btn-default button_secondary_color button_add\" data-article-id=\"" + value.id + "\">+</button> \
-						</div> \
-					</div>"
-		$('#article_list').append(html);
+	$.each(articles.data, function(index, article) {
+		$.each(article.price, function(index, price) {
+			var html = "<div class=\"row\"> \
+							<div class=\"col-sm-2 padding_10\"> \
+								<img src=\"" + article.picture + "\"> \
+							</div> \
+							<div class=\"col-sm-4 product_article\">" + article.name + "</div> \
+							<div class=\"col-sm-2 product_unit\">" + article.unit + "</div> \
+							<div class=\"col-sm-2 product_price\">&#8364; " + price.price + "</div> \
+							<div class=\"col-sm-2 product_supply\">" + price.supply + "</div> \
+						</div>"
+			$('#article_list').append(html);
+		});
 	});
 
 	count = articles.count;

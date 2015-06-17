@@ -44,7 +44,7 @@
 		<div class="row">
 			<div class="col-md-10">
 				<div id="product_header" class="row">
-						<div class="col-sm-2">picerno</div>
+						<div class="col-sm-2"></div>
 						<div class="col-sm-4 padding_10">Artikel</div>
 						<div class="col-sm-2 padding_10">Eenheid</div>
 						<div class="col-sm-2 padding_10">Prijs per eenheid</div>
@@ -53,24 +53,26 @@
 					<div id="article_list">
 						@foreach ($articles as $article)
 							@foreach ($article->price as $price)
-							<div class="row">
-								<div class="col-sm-2 padding_10">
-									<img src="{{ $article->picture }}">
+								<div class="row">
+									<div class="col-sm-2 padding_10">
+										<img src="{{ $article->picture }}">
+									</div>
+									<div class="col-sm-4 product_article">{{ $article->name }}</div>
+									<div class="col-sm-2 product_unit">{{ $article->unit }}</div>
+									<div class="col-sm-2 product_price">&#8364; {{ $price->price }}</div>
+		 							<div class="col-sm-2 product_supply">{{ $price->supply}}</div>
 								</div>
-								<div class="col-sm-4 article_name">{{ $article->name }}</div>
-								<div class="col-sm-2 article_unit">{{ $article->unit }}</div>
-								<div class="col-sm-2 article_price">&#8364; {{ $price->price }}</div>
-	 							<div class="col-sm-2 article_supply">{{ $price->supply}}</div>
-							</div>
 							@endforeach
 						@endforeach
 					</div>
 
 			</div>
 
-	  		<div class="col-md-2" id="notifications">
-	  			<div id="test2">
-					<p>ebola</p>
+	  		<div class="col-md-2">
+	  			<div id="notifications" class="row">
+					<div id="notifications_header">
+						<h3>Notifications</h3>
+					</div>
 				</div>	
 	  			
 	  		</div>

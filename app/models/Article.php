@@ -19,4 +19,9 @@ class Article extends Eloquent {
 		return $this->hasMany('Price')->where('supply', '>', 0);
 	}
 
+	public static function retrieve_articles($filter){
+		
+		return Article::all();
+	
+	}
 }

@@ -20,7 +20,10 @@ class ArticleController extends BaseController {
 
 			return Response::json($ret);
 		} else {
-			return View::make('pages.article');
+			$categories = Category::where('type', '<', 2)->orderBy('name')->get();
+			$products = Article::orderBy('name')->take(10)->get();
+
+			return View::make('pages.article', array('categories'=>$categories, 'products'=>$products));
 		}
 		return 'lol';
 	}

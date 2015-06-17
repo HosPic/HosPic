@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 	'frank' => array('Franks-MacBook-Pro.local'),
-	'damon' => array('normandy-SR3'),
+	'damon' => array('normandy-SR3','Spartacus-SR2'),
 	'mark' => array('Laptopper-PC', 'Mighty-1'),
 	'staging' => array('nmc-uo'),
 	'production' => array('NMC-OS'),

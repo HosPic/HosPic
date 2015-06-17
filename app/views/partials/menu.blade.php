@@ -20,7 +20,7 @@
 				<li class="{{ HTML::activeState('artikelen') }}"><a href="{{ URL::route('getArticles'); }}">Voorraad beheer</a></li>
 			@endif
 			@if (Auth::user()->canView("getDeliver"))
-				<li class="{{ HTML::activeState('leveringen') }}"><a href="{{ URL::route('getDeliver'); }}">Bezorglijst</a></li>
+				<li class="{{ HTML::activeState('bezorgen') }}"><a href="{{ URL::route('getDeliver'); }}">Bezorglijst</a></li>
 			@endif
 			@if (Auth::user()->canView("getStatistics"))
 				<li class="{{ HTML::activeState('statistieken') }}"><a href="{{ URL::route('getStatistics'); }}">Statistieken</a></li>

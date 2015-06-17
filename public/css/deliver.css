@@ -1,0 +1,205 @@
+body {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.navbar {
+	border: none;
+	z-index: 2;
+	border-radius: 0px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+}
+
+#content {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	padding-top: 58px;
+}
+
+#ordersBar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 25%;
+	height: 100%;
+	overflow-y:scroll;
+	background: #501B16;
+	padding-bottom: 58px;
+}
+
+.order {
+	cursor: pointer;
+	float: left;
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	color: #fff;
+	padding: 10px;
+	border-bottom: 1px solid #300E0B;
+}
+
+.order.active {
+	background: rgba(100,100,100,0.3);
+}
+
+.order-info {
+	width: 80%;
+	float: left;
+}
+
+.order-info h3 {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: normal;
+	float: left;
+	color: #fff;
+	padding: 0;
+	margin: 0 0 5px 0;
+}
+
+.order-info h3 small {
+	color: rgb(189, 189, 189);
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 300;
+	float: left;
+	width: 100%;
+}
+
+.order-date {
+	width: 20%;
+	float: left;
+	text-align: right;
+}
+
+.order span {
+	width: 100%;
+	float: left;
+	display: block;
+	font-size: 14px;
+	text-transform: capitalize;
+	line-height: 18px;
+	color: rgb(230,230,230);
+	font-weight: 300;
+}
+
+#orderContent {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 75%;
+	height: 100%;
+	overflow-y:scroll;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+#orderInfo {
+	float: left;
+	width: 100%;
+	background: #fff;
+	border: 1px solid rgba(197, 197, 197, 0.592157);
+	box-shadow: 2px 2px 2px 0px rgb(218,218,218);
+	padding: 15px;
+	margin: 0 0 30px 0;
+	display: none;
+}
+
+#orderInfo h2 {
+	font-weight: 200;
+	font-size: 30px;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	float: left;
+	display: block;
+	margin-bottom: 5px;
+}
+#orderInfo b {
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 400;
+	float: left;
+	width: 100%;
+	display: block;
+	margin-bottom: 5px;
+}
+
+#orderInfo span {
+	color: rgb(105, 105, 105);
+	font-size: 14px;
+	line-height: 18px;
+	display: block;
+	float: left;
+	width: 100%;
+	font-weight: 400;
+}
+
+#orderLoader {
+	margin-top: 50px;
+	overflow: hidden;
+	float: left;
+	width: 100%;
+}
+
+#orderLoader p {
+	width: 100%;
+	text-align: center;
+	float: left;
+	color: #999;
+	font-size: 17px;
+	display: none;
+}
+
+#orderContent.loading #loading,
+#orderContent.noselect #noSelect,
+#orderContent.empty #empty,
+#orderContent.open #orderInfo,
+#orderContent.open #orderArticles {
+	display: block;
+}
+
+
+
+.spin {
+	text-rendering: auto;
+  	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  	transform: translate(0, 0);
+	font: normal normal normal 40px/1 "FontAwesome";
+	display: block;
+	-webkit-animation: spin 1s infinite ease-in-out;
+  	animation: spin 1s infinite ease-in-out;
+  	margin-bottom: 10px;
+}
+.spin:before {
+	content: "\f1ce";
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

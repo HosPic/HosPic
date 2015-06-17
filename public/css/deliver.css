@@ -208,12 +208,6 @@ body {
 .table tr th:first-child,
 .table tr td:first-child {
 	width: 30px;
-	-webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .check {

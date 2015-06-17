@@ -101,6 +101,10 @@ $("#ordersBar").on('click','.order',function(e){
 	delivery.showOrder($(this).data('orderid'));
 });
 
+$("#orderArticles").on('click',".article-row",function(e){
+
+});
+
 $("#orderArticles").on('change',"#checkAll",function(e){
 	if(e.target.checked){
 		$(".article-row .check input[type='checkbox']").prop("checked",true);

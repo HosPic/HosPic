@@ -26,7 +26,7 @@ Route::group(array('before'=>'auth'), function() {
 
 	Route::get('/diensten', array('as'=>'getService','uses'=>'ServiceController@index'));
 	Route::get('/special', array('as'=>'getSpecialOrder','uses'=>'OrderController@special'));
-	Route::get('/bezorgen', array('as'=>'getDeliver','uses'=>'OrderController@index'));
+	Route::get('/bezorgen', array('as'=>'getDeliver','uses'=>'DeliverController@index'));
 	Route::get('/aanvragen', array('as'=>'getMyServices','uses'=>'ServiceController@show'));
 	Route::get('/bestellingen', array('as'=>'getMyOrders','uses'=>'OrderController@index'));
 	Route::get('/bestellingen/{id}', array('as'=>'getOrder','uses'=>'OrderController@show'));

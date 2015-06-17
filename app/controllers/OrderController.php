@@ -3,15 +3,7 @@
 class OrderController extends BaseController {
 
 	public function index() {
-		// return View::make('pages.order');
-		$orders = Order::whereIn('status',array(2,3))->get();
-
-		if(Request::wantsJson()){
-			return Response::json(array('orders'=>$orders));
-		}else{
-			return View::make('pages.deliver')->with('orders',$orders);
-		}
-
+		return View::make('pages.order');
 	}
 
 	public function show($id) {

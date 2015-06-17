@@ -208,57 +208,5 @@ body {
 .table tr th:first-child,
 .table tr td:first-child {
 	width: 30px;
-}
-
-.check {
-	position: relative;
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-}
-
-.check input {
-	width: 1px;
-	height: 1px;
-	opacity: 0;
-}
-
-.check span:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 25px;
-	width: 25px;
-	background: #FFF;
-	border: 1px solid #DADADA;
-	border-radius: 2px;
-	box-shadow: 1px 1px 0 0 rgba(112, 115, 118, 0.1);
-}
-
-.check span:after {
-	font: normal normal normal 21px/21px "FontAwesome";
-	content: "\f00c";
-	position: absolute;
-	top: 2px;
-	left: 2px;
-	color: #d38104;
-	transform: scale(0);
-	-ms-transform: scale(0);
-	-webkit-transform: scale(0);
-
-	-webkit-transition: all 0.1s ease 0s;
-	-moz-transition: all 0.1s ease 0s;
-	-o-transition: all 0.1s ease 0s;
-	transition: all 0.1s ease 0s;
-}
-
-.check input:checked + span:after {
-	transform: scale(1);
-	-ms-transform: scale(1);
-	-webkit-transform: scale(1);
-}
-
-.check input:focus + span:before {
-	border-color: #bababa;
+	text-align: center;
 }

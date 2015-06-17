@@ -89,8 +89,9 @@ a:hover {
 
 #shopping_cart_header {
 	margin: 0 3px;
-	padding: 0 55px;
+	padding: 0 20px;
 	border-bottom: 2px #d9d9d9 solid;
+	text-align: center;
 }
 
 /* Media Queries below this line */

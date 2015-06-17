@@ -94,7 +94,6 @@ $('#product_list').bind('scroll', function() {
 $('.button_add').on('click', function(e) {
 	var product_id = $(this).data('article-id');
 	var product_amount = $(this).parent().children('input').val();
-	//console.log($(this).parent().parent().children('.product_price').text());
 	var product_price = $(this).parent().parent().children('.product_price').text();
 	var product_name = $(this).parent().parent().children('.product_article').text();
 	saveCart(product_id, product_amount, product_price, product_name);

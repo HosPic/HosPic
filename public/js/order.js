@@ -56,18 +56,60 @@ function loadArticles(products) {
 	}
 }
 
-function saveCart(product_id, product_amount, product_price, product_name) {
-	$.ajax({
-		type : "POST",
-		url : '/bestellen',
-		data : {'product_id' : product_id, 'product_amount' : product_amount, 'product_price' : product_price, 'product_name' : product_name},
-		success : function(response) {
-			// console.log(response);
-		},
-		error : function(response) {
-			console.log(response);
+var shopping_cart = {
+	cart : {},
+	saveCart : function(product_id, product_amount, product_price, product_name) {
+		product_id = parseInt(product_id);
+		product_amount = parseInt(product_amount);
+		product_price = product_price.substring(1);
+		product_price = parseFloat(product_price);
+		var append = true;
+
+		$.each($('#shopping_cart_content').children(), function(index, value) {
+			if ( product_id == parseInt($(this).attr('id'))) {
+				append = false;
+				return false;
+			} else {
+				append = true;
+			}
+		});
+		
+		if (!append) {
+			var current_amount = parseInt($('#shopping_cart_content').find($("#" + product_id + "")).children($('.cart_amount')).children($('input')).val());
+			var amount_add = parseInt(product_amount);
+			var new_amount = current_amount + amount_add;
+			$('#shopping_cart_content').find($("#" + product_id + "")).find($('.cart_amount')).children($('input')).val(new_amount);
+			$('#shopping_cart_content').find($("#" + product_id + "")).find($('.cart_total_article_price')).text("€ " + new_amount * product_price);
+		} else {
+			var html = "<div class=\"shopping_cart_row\" id=\"" + product_id + "\"> \
+							<div class=\"col-sm-12 cart_name\">" + product_name + "</div> \
+							<div class=\"col-sm-2 cart_amount\"> \
+								<input value=\"" + product_amount + "\"> \
+							</div> \
+							<div class=\"col-sm-1\">x</div> \
+							<div class=\"col-sm-2 cart_price\">" + product_price + "</div> \
+							<div class=\"col-sm-1\">=</div> \
+							<div class=\"col-sm-2 cart_total_article_price\">" + product_price * product_amount + "</div> \
+							<div class=\"col-sm-2 pull-right\"> \
+								<button class=\"btn btn-default button_remove\">-</button> \
+							</div> \
+						</div>"
+			$('#shopping_cart_content').append(html);
 		}
-	});
+		
+		$.ajax({
+			type : "POST",
+			url : '/bestellen',
+			data : {'product_id' : product_id, 'product_amount' : product_amount, 'product_price' : product_price, 'product_name' : product_name},
+			success : function(response) {
+				
+				// console.log(response);
+			},
+			error : function(response) {
+				console.log(response);
+			}
+		});
+	},
 }
 
 // Click event for the categories
@@ -96,5 +138,5 @@ $('.button_add').on('click', function(e) {
 	var product_amount = $(this).parent().children('input').val();
 	var product_price = $(this).parent().parent().children('.product_price').text();
 	var product_name = $(this).parent().parent().children('.product_article').text();
-	saveCart(product_id, product_amount, product_price, product_name);
+	shopping_cart.saveCart(product_id, product_amount, product_price, product_name);
 })

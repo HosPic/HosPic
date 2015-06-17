@@ -68,15 +68,19 @@
 					<div id="shopping_cart_content">
 					@if (!empty($shopping_cart))
 						@foreach ($shopping_cart as $cart)
-							<div class="col-sm-12">{{ $cart['name'] }}</div>
-							<div class="col-sm-2">
+						<div class="shopping_cart_row" id="{{ $cart['product_id'] }}">
+							<div class="col-sm-12 cart_name">{{ $cart['name'] }}</div>
+							<div class="col-sm-2 cart_amount">
 								<input value="{{ $cart['amount'] }}">
 							</div>
 							<div class="col-sm-1">x</div>
-							<div class="col-sm-2">{{ $cart['price'] }}</div>
+							<div class="col-sm-2 cart_price">&#8364; {{ $cart['price'] }}</div>
 							<div class="col-sm-1">=</div>
-							<div class="col-sm-2">{{ $cart['price'] * $cart['amount']}}</div>
-							<div class="col-sm-2 pull-right">{{ $cart['price'] * $cart['amount']}}</div>
+							<div class="col-sm-2 cart_total_article_price">&#8364; {{ $cart['price'] * $cart['amount']}}</div>
+							<div class="col-sm-2 pull-right">
+								<button class="btn btn-default button_remove">-</button>
+							</div>
+						</div>
 						@endforeach
 					@endif
 					</div>

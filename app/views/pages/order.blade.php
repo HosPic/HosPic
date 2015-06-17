@@ -8,10 +8,6 @@
 	{{ HTML::style("css/order.css")}}
 @stop
 
-@section('title')
-	- Bestellen
-@stop
-
 @section('searchbar')
 	<form class="form-inline">
 		<div class="col-md-4">
@@ -31,25 +27,69 @@
 					<div class="panel-heading">Categorieën</div>
 					<div class="panel-body">
 						<ul class="nav nav-pills nav-stacked">
-							<li class="{{ HTML::activeState('bestellen') }}"><a href="{{ URL::route('getOrder') }}">Alles</a></li>
-							<li class="{{ HTML::activeState('bestellen/medisch') }}"><a href="{{ URL::route('getCategorie', 'medisch') }}">Medisch</a></li>
-							<li class="{{ HTML::activeState('bestellen/kantoor') }}"><a href="{{ URL::route('getCategorie', 'kantoor') }}">Kantoor</a></li>
-							<li class="{{ HTML::activeState('bestellen/ict') }}"><a href="{{ URL::route('getCategorie', 'ict') }}">ICT</a></li>
-							<li class="{{ HTML::activeState('bestellen/huishoudelijk') }}"><a href="{{ URL::route('getCategorie', 'huishoudelijk') }}">Huishoudelijk</a></li>
-							<li class="{{ HTML::activeState('bestellen/meubilair') }}"><a href="{{ URL::route('getCategorie', 'meubilair') }}">Meubilair</a></li>
+							<li class="active"><a>Alles</a></li>
+							@foreach ($categories as $categorie)
+								<li data-category-id="{{ $categorie->id }}"><a>{{ $categorie->name }}</a></li>
+							@endforeach
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-8">
-				Placeholder
+				<div id="product_header" class="row">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-4 padding_10">Artikel</div>
+					<div class="col-sm-2 padding_10">Eenheid</div>
+					<div class="col-sm-2 padding_10">Prijs per eenheid</div>
+					<div class="col-sm-2"></div>
+				</div>
+				<div id="product_list">
+					@foreach ($products as $product)
+						<div class="row">
+							<div class="col-sm-2 padding_10">
+								<img src="{{ $product->picture }}">
+							</div>
+							<div class="col-sm-4 product_article">{{ $product->name }}</div>
+							<div class="col-sm-2 product_unit">{{ $product->unit }}</div>
+							<div class="col-sm-2 product_price">&#8364; {{ $product->price[0]->price }}</div>
+							<div class="col-sm-2 product_input">
+								<input type="text" class="form-control" value="1">
+								<button type="submit" class="btn btn-default button_secondary_color button_add" data-article-id="{{ $product->id }}">+</button>
+							</div>
+						</div>
+					@endforeach
+				</div>
 			</div>
-			<div id="shopping_cart" class="col-md-2">
-				Hoi
+			<div class="col-md-2">
+				<div id="shopping_cart" class="row">
+					<div id="shopping_cart_header">
+						<h3>Winkelwagen</h3>
+					</div>
+					<div id="shopping_cart_content">
+					@if (!empty($shopping_cart))
+						@foreach ($shopping_cart as $cart)
+						<div class="shopping_cart_row" id="{{ $cart['product_id'] }}">
+							<div class="col-sm-12 cart_name">{{ $cart['name'] }}</div>
+							<div class="col-sm-2 cart_amount">
+								<input value="{{ $cart['amount'] }}">
+							</div>
+							<div class="col-sm-1">x</div>
+							<div class="col-sm-2 cart_price">&#8364; {{ $cart['price'] }}</div>
+							<div class="col-sm-1">=</div>
+							<div class="col-sm-2 cart_total_article_price">&#8364; {{ $cart['price'] * $cart['amount']}}</div>
+							<div class="col-sm-2 pull-right">
+								<button class="btn btn-default button_remove">-</button>
+							</div>
+						</div>
+						@endforeach
+					@endif
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 @stop
 
 @section('script')
+	{{ HTML::script('js/order.js')}}
 @stop

@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default primary_color" role="navigation">
-	<div class="navbar-header secondary_color">
+	<div class="navbar-header">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topbar">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="{{ URL::to('/'); }}">HosPic</a>
+		<a class="navbar-brand secondary_color" href="{{ URL::to('/'); }}">HosPic</a>
 	</div>
 
 	<div class="collapse navbar-collapse" id="topbar">

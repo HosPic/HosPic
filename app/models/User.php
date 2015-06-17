@@ -40,6 +40,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 			'magazijn' => 'getDeliver',
 			'facilitaire diensten' => 'getDeliver',
 		);
+		
 		$d = $this->departments;
 		if(is_array($d)){
 			foreach ($this->departments as $department) {

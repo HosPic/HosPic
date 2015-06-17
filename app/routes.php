@@ -30,11 +30,8 @@ Route::group(array('before'=>'auth'), function() {
 	Route::get('/aanvragen', array('as'=>'getMyServices','uses'=>'ServiceController@show'));
 	Route::get('/bestellingen', array('as'=>'getMyOrders','uses'=>'OrderController@index'));
 	Route::get('/bestellingen/{id}', array('as'=>'getOrder','uses'=>'OrderController@show'));
-
-	Route::group(array('prefix'=>'bestellen'), function() {
-		Route::get('/', array('as'=>'getOrder','uses'=>'OrderController@index'));
-		Route::get('/{categorie}', array('as'=>'getCategorie','uses'=>'OrderController@getCategorie'));
-	});
+	Route::get('/bestellen', array('as'=>'getOrder','uses'=>'OrderController@index'));
+	Route::post('/bestellen', array('as'=>'getOrder','uses'=>'OrderController@index'));
 	Route::get('/statistieken', array('as'=>'getStatistics','uses'=>'StatisticsController@index'));
 	Route::get('/logout', array('as'=>'getLogout','uses'=>'UserController@getLogout'));
 });

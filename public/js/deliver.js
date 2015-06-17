@@ -69,15 +69,15 @@ var delivery = {
 		$("#orderInfo").html(html);
 	},
 	buildArticles : function(articles){
-		var html ="<table class=\"table\"><thead></thead><tbody><tr><th></th><th>Naam</th><th>Categorie</th><th>Locatie</th><th>Aantal</th></tr>";
+		var html ="<table class=\"table\"><thead></thead><tbody><tr><th><label class=\"check\"><input id=\"checkAll\"type=\"checkbox\"><span></span></label></th><th>Naam</th><th>Categorie</th><th>Locatie</th><th>Aantal</th></tr>";
 		for(i in articles){
 			var a = articles[i];
-			html+= "<tr>";
-			html+= "<td></td>";
+			html+= "<tr class=\"article-row\">";
+			html+= "<td><label class=\"check\"><input type=\"checkbox\"><span></span></label></td>";
 			html+= "<td>"+a['article']['name']+"</td>";
 			html+= "<td>"+a['article']['category']['name']+"</td>";
 			html+= "<td>"+a['price']['location']+"</td>";
-			html+= "<td>"+(a['quantity'] - a['total_delivered'])+"</td>";
+			html+= "<td>"+(a['quantity'] - a['total_delivered'])+" "+a['article']['unit']+"</td>";
 			html+= "</tr>";
 		}
 		html+="</tbody></table>";
@@ -99,4 +99,12 @@ delivery.init();
 
 $("#ordersBar").on('click','.order',function(e){
 	delivery.showOrder($(this).data('orderid'));
+});
+
+$("#orderArticles").on('change',"#checkAll",function(e){
+	if(e.target.checked){
+		$(".article-row .check input[type='checkbox']").prop("checked",true);
+	}else{
+		$(".article-row .check input[type='checkbox']").prop("checked",false);
+	}
 });

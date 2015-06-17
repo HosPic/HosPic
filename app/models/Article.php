@@ -4,10 +4,8 @@ class Article extends Eloquent {
 
 	protected $table = 'article';
 	public $timestamps = false;
-	
-	public $with = array('category');
 
-	public $with = array('price');
+	public $with = array('category', 'price');
 
 	public function category(){
 		return $this->belongsTo('Category');

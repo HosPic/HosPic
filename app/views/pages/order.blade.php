@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-7">
 				<div id="product_header" class="row">
 					<div class="col-sm-2"></div>
 					<div class="col-sm-4 padding_10">Artikel</div>
@@ -60,7 +60,7 @@
 					@endforeach
 				</div>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div id="shopping_cart" class="row">
 					<div id="shopping_cart_header">
 						<h3>Winkelwagen</h3>
